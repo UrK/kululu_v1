@@ -1,0 +1,48 @@
+﻿@direction: ltr;
+@oppositeDirection: rtl!important;
+
+@textAlign : left;
+@oppositeTextAlign : right;
+
+@languageFloat :  left;
+@oppositeLanguageFloat :right;
+
+.language(@left)
+{
+	left:@left;
+}
+
+.oppositeLanguage(@right)
+{
+	right:@right;
+}
+
+.languageMargin(@left)
+{
+	margin-left:@left;
+}
+
+.oppositeLanguageMargin(@right)
+{
+	margin-right:@right;
+}
+
+.languagePadding(@left)
+{
+	padding-left:@left;
+}
+
+.oppositeLanguagePadding(@right)
+{
+	padding-right:@right;
+}
+
+.languageBorder(@style, @width, @color)
+{
+	border-left:@arguments;
+}
+
+.oppositeLanguageBorder(@style, @width, @color)
+{
+	border-right:@arguments;
+}

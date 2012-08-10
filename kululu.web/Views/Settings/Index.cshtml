@@ -1,0 +1,291 @@
+﻿@model Kululu.Web.Models.LocalBusinessDTO
+@using Resources = Kululu.Web.App_GlobalResources
+
+           
+@using Kululu.Entities.Common
+@{
+    ViewBag.Title = "Settings";
+    Kululu.Web.Models.PlaylistDTO defaultPlaylist = @Model.DefaultPlaylist;
+    ViewBag.CurrentPlaylistId = defaultPlaylist.Id;
+    Layout = MVC.Shared.Views._LayoutMain;
+}
+@section CSS 
+{
+    <link href="@Url.Content("~/Content/css/blockmessage.css")" rel="stylesheet" type="text/css"/>
+    <link href="@Url.Content("~/Content/css/dialogs_" + PageData["dirStr"] + ".css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/css/guiders-1.1.2_" + PageData["dirStr"] + ".css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Scripts/autocomplete/token-input-facebook.css")" rel="stylesheet" type="text/css"/>
+    <link href="@Url.Content("~/Content/css/settings-index_" + PageData["dirStr"] + ".css")" rel="stylesheet" type="text/css"/>
+}
+@section Scripts
+{
+    @Html.Partial(MVC.Shared.Views._Globals, @Model)
+}
+@section ScriptsEND
+{
+    @if (HttpContext.Current.IsDebuggingEnabled)
+    {
+        <script src="@Url.Content("~/Scripts/jquery.jqote2.js")" type="text/javascript"></script>
+        <script src="@Url.Content("~/Scripts/blockmessage.js")" type="text/javascript"></script>
+        <script src="@Url.Content("~/Scripts/flashmessage.js")" type="text/javascript"></script>
+        <script src="@Url.Content("~/Scripts/guiders-1.1.2.js")" type="text/javascript"></script>
+        <script src="@Url.Content("~/Scripts/jquery.tipsy.js")" type="text/javascript"></script>
+        <script src="@Url.Content("~/Scripts/core.js")" type="text/javascript"></script>
+        <script src="@Url.Content("~/Scripts/facebook.js")" type="text/javascript"></script>
+        <script src="@Url.Content("~/Scripts/ajax.js")" type="text/javascript"></script>
+        <script src="@Url.Content("~/Scripts/autocomplete/jquery.tokeninput.js")" type="text/javascript"></script>
+        <script src="@Url.Content("~/Scripts/extensions.js")" type="text/javascript"></script>
+        <script src="@Url.Content("~/Scripts/kululu.js")" type="text/javascript"></script>
+    }
+    else
+    {
+        <script src="@Url.Content("~/Scripts/allmin.js")" type="text/javascript"></script>
+    }
+
+    <script src="@Url.Content("~/Scripts/settings-index.js")" type="text/javascript"></script>
+
+}
+
+@functions { 
+    string GetNullableDateValue(DateTime? date)
+    {
+        if (date.HasValue)
+        {
+            return date.Value.ToString("dd/MM/yyyy");
+        }
+        else
+        {
+            return string.Empty;
+        }
+    }
+
+    string GetImportPlaylistCssClass()
+    {
+        if (Model.ImportPlaylist != null)
+        {
+            return string.Empty;
+        }
+        return "hidden";
+    }
+
+    IEnumerable<SelectListItem> GetPossiblePostsToWall()
+    {
+        var postTypes = from FbPostToWallType t in Enum.GetValues(typeof(FbPostToWallType))
+                        select new { ID = t, Name = GetEnumText(t) };
+
+        return new SelectList(postTypes, "ID", "Name", Model.UserPostToWallType);
+    }
+
+    private string GetEnumText(Kululu.Entities.Common.FbPostToWallType postType)
+    {
+        switch (postType)
+        {
+            case Kululu.Entities.Common.FbPostToWallType.Image:
+                return Resources.Settings.image;
+            case Kululu.Entities.Common.FbPostToWallType.Video:
+                return Resources.Settings.video;
+            default:
+                return string.Empty;
+        }
+    }
+}
+
+<input type="hidden" id="businessId" value="@Model.Id"/>
+
+<div class="header clearfix">
+    <h1>@Resources.Strings.settings</h1>
+    <a href="@Url.Content("~/LocalBusiness/GetPlaylistByFanPage?fanPageId=")@defaultPlaylist.FanPageId" class="ui-btnBack" >@Resources.Strings.back</a>
+</div>
+
+<div class="content clearfix">
+    <div id="flash"></div>
+    <div class="settings-menu">
+          <span class="selected"> <a href="#playlists"> @Resources.Settings.playlists </a> </span>
+          <span> | </span>
+          <span> <a href="#managers"> @Resources.Settings.managers </a> </span>
+          <span> | </span>
+          <span > <a href="#social"> @Resources.Settings.advance </a> </span>
+    </div>
+
+    <div class="infoContainer playlists">
+            <ul class="info-list">
+                <li>
+                    <div class="column-header column column1">  @Resources.Settings.playlist </div>
+                    <div class="column-header column column2"> @Resources.Settings.active</div>
+                    <div class="column-header column column3"> @Resources.Settings.ratings  </div>
+                    <div class="column-header column column4"> @Resources.Settings.songs</div>
+                    <div class="column-header column column5"> @Resources.Settings.endDate</div>
+                </li>
+            
+                @foreach (var playlist in @Model.Playlists)
+                {
+                    string defaultPlaylistCssClass = playlist.IsDefaultPlaylist ? "defaultPlaylist" : "";
+                
+                    <li class="group playlist Id playlistInfo" >
+                        <div class="column-content column1" title="@Resources.Settings.playlist">  
+                            @if (playlist.IsDefaultPlaylist)
+                            {
+                                <span class="activePlaylist"> @Resources.Settings.favorite </span>
+                            }
+                            <span class="column-content @defaultPlaylistCssClass"> @playlist.Name </span>
+                            <div style="position: relative;" class="group">
+                                <div class="action-options" title="@Resources.Strings.options"></div>
+                                <div class="action-options-content action-options-content-playlists hidden">
+                                    @Html.ActionLink(@Resources.Settings.setDefaultPlaylist, "SetDefaultPlaylist", "LocalBusiness", new { localBusinessId = playlist.LocalBusinessId, playlistId = playlist.Id }, null)
+                                    @Html.ActionLink(@Resources.Settings.EditPlaylist, "Edit", "Playlist", new { @playlist.Id }, null)
+                                </div>
+                            </div>
+                         </div> 
+                        
+                        <div class="column-content column column2" title="@Resources.Settings.ratings"> 
+                        @Html.CheckBox("cbIsPlaylistActive", playlist.IsActive, new { @disabled = "disabled" })
+                        
+                        </div> 
+
+                        <div class="column-content column column3" title="@Resources.Settings.ratings"> @playlist.NumberOfVotes   </div> 
+                        <div class="column-content column column4" title="@Resources.Settings.songs"> @playlist.NumberOfSongs   </div> 
+                       
+                        <div class="column-content column column5" title="@Resources.Settings.endDateTitle">
+                            @GetNullableDateValue(playlist.NextPlayDate)
+                        </div> 
+                    </li>    
+                }
+            </ul>
+
+             @Html.ActionLink(@Resources.Settings._new, "Create", "Playlist", new { @defaultPlaylist.FanPageId, @defaultPlaylist.LocalBusinessId }, new { @class = "ui-btnSubmit", @title = "צור פלייליסט חדש" })
+        </div>
+
+    <div class="infoContainer managers hidden">
+            <input type="text" id="friendSelect" class="english" />
+            <input type="submit" class="ui-btnSubmit btnAddManager" value="@Resources.Settings.add" />
+
+             <ul class="info-list clearBoth">
+                 @foreach (var manager in @Model.Owners)
+                 {
+                     <li class="clearfix playlist Id playlistInfo" >
+                         <input type="hidden" class="userId" value="@manager.FBID" />
+                         <div class="column1" >
+                            <img  title="@Resources.Settings.user" src="https://graph.facebook.com/@manager.FBID/picture" /> 
+                         </div>
+
+                         <div class="column2" title="@Resources.Settings.name"> 
+                            <span> @manager.name   </span>
+                            
+                            <div  class="action-options"  title="@Resources.Strings.options" ></div>
+                            <div  class="action-options-content action-options-content-managers hidden">
+                                <div> <a href="https://www.facebook.com/profile.php?id=@manager.FBID" target="_blank" > @Resources.Settings.viewProfile</a></div>
+                                <div> <a href="#" id="@manager.FBID" class="remove"> @Resources.Settings.removeManager </a></div>
+                            </div>
+                         </div> 
+                     </li>    
+                 }
+             </ul>
+         </div>
+
+    <div class="infoContainer social socialSettings hidden">
+        <div class="splitSettings">
+            <div class="innerwrapper">
+                <h2 class="settingsSubTitle">@Resources.Settings.general</h2>
+                <ul>
+                    <li> 
+                        <label>@Resources.Settings.demandLike</label>
+                        <span>@Resources.Settings.enable</span>  @Html.RadioButton("IsLikeDemanded",  //TODO: change this property magic string with something more dynamic
+                                                                true,
+                                                                @Model.IsLikeDemanded)
+                        <span>@Resources.Settings.disable</span>   @Html.RadioButton("IsLikeDemanded",
+                                                                false,
+                                                                !@Model.IsLikeDemanded)
+                    </li>
+                </ul>
+                <h2>@Resources.Settings.postToWall</h2>
+                <ul>
+                    <li>
+                        <label>@Resources.Settings.updateWallUser</label>
+                        <span>@Resources.Settings.enable</span>  @Html.RadioButton("PublishUserContentToWall",   //TODO: change this property magic string with something more dynamic
+                                                                true,
+                                                                @Model.PublishUserContentToWall)
+                        <span>@Resources.Settings.disable</span>   @Html.RadioButton("PublishUserContentToWall",
+                                                                false,
+                                                                !@Model.PublishUserContentToWall)
+                    </li>
+                    <li> 
+                        <label>@Resources.Settings.updateWallAdmin</label>
+                        <span>@Resources.Settings.enable</span>  @Html.RadioButton("PublishAdminContentToWall",  //TODO: change this property magic string with something more dynamic
+                                                                true,
+                                                                @Model.PublishAdminContentToWall)
+                        <span>@Resources.Settings.disable</span>   @Html.RadioButton("PublishAdminContentToWall",
+                                                                false,
+                                                                !@Model.PublishAdminContentToWall)
+                    </li>
+                    <li>
+                        <label>@Resources.Settings.postImageOrVideo
+                            <a href="javascript:void(0);" class="tooltip" title="
+                            @Resources.Settings.postImageOrVideoExplanation
+                            ">@Resources.Settings.what</a>
+                        </label>
+                        @Html.DropDownList("UserPostToWallType", @GetPossiblePostsToWall())
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="splitSettings">
+            <div class="innerwrapper">
+                <h2> @Resources.Settings.synchronize</h2>
+                <p> @Resources.Settings.synchronizeExplanation</p>
+                <p> @Resources.Settings.synchronizeManually
+                <a class="btnSynchronize"> @Resources.Settings.synchornizeNow</a>
+                </p>
+            </div>
+        </div>
+        <div class="splitSettings">
+            <div class="innerwrapper">
+                <h2>@Resources.Settings.import</h2>
+                <p>@Resources.Settings.importExplanation </p>
+                <label>@Resources.Settings.choseImportPlaylist</label>
+                @Html.DropDownListFor(modelItem => modelItem.ImportPlaylist.Id,
+                    new SelectList(Model.Playlists, "Id", "Name", Model.ImportPlaylist).AsEnumerable(),
+                    string.Empty, null)
+                <div>
+                    <a class="btnImport" title = "@Resources.Settings.manualImport">@Resources.Settings.manualImportTitle</a>
+                    <p id="importPlaylistNotSelectedWarning" class="error" style="display:none">@Resources.Settings.chooseImportPlaylistError</p>
+                </div>
+            </div>
+        </div>
+        <div class="splitSettings">
+            <div class="innerwrapper">
+            <h2>@Resources.Settings.manualPostToWall</h2>
+            <p> @Resources.Settings.manualPostToWallExplanation </p>
+                <ul>
+                    <li> 
+                        <label>@Resources.Settings.timedUpdatePosts</label>
+                        <span>@Resources.Settings.enable</span>  @Html.RadioButton("IsPushesToWall",  //TODO: change this property magic string with something more dynamic
+                                                                true,
+                                                                @defaultPlaylist.IsPushesToWall)
+                        <span>@Resources.Settings.disable</span>   @Html.RadioButton("IsPushesToWall",
+                                                                false,
+                                                                !@defaultPlaylist.IsPushesToWall)
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="splitSettings">
+            <div class="innerwrapper">
+            <h2>@Resources.Settings.settingsLanguage</h2>
+            <p>@Resources.Settings.settingsLanguageExplanation</p>
+            <label>@Resources.Settings.settingLanguageSelectorLabel</label>
+            @Html.DropDownListFor(
+                m => m.Locale,
+                new SelectList(Model.LanguagesMap, "Value", "Key", Model.Locale),
+                @Resources.Settings.settingsLanguageUserSelected,
+                null)
+            </div>
+            <!-- The selected language is @Model.Locale -->
+        </div>
+        <div class="settingsActions">
+            <a class="ui-btnSubmit btnSaveSettings">@Resources.Strings.save</a>
+        </div>
+    </div>
+</div>
+
+@*jqote templates*@
+@Html.Partial(MVC.Playlist.Views._DialoguesTemplates)

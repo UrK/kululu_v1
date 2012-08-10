@@ -1,0 +1,20 @@
+﻿@using Kululu.Web.Controllers
+@model BaseController.ErrorMessage
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Error</title>
+</head>
+<body>
+    <h2>
+        @Model.Title
+    </h2>
+    <div>
+        @Model.Details
+    </div>
+</body>
+</html>

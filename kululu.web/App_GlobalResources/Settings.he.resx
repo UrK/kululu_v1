@@ -1,0 +1,291 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="active" xml:space="preserve">
+    <value>פעיל</value>
+  </data>
+  <data name="add" xml:space="preserve">
+    <value>הוסף</value>
+  </data>
+  <data name="advance" xml:space="preserve">
+    <value>מתקדם</value>
+  </data>
+  <data name="chooseImportPlaylistError" xml:space="preserve">
+    <value>שכחת לבחור פלייליסט לייבוא נתונים</value>
+  </data>
+  <data name="choseImportPlaylist" xml:space="preserve">
+    <value>פלייליסט לייבוא נתונים חדשים</value>
+  </data>
+  <data name="dailySongLimit" xml:space="preserve">
+    <value>שירים ביום</value>
+  </data>
+  <data name="demandLike" xml:space="preserve">
+    <value>דרוש לייק בשביל לצפות בדף</value>
+  </data>
+  <data name="description" xml:space="preserve">
+    <value>תיאור</value>
+  </data>
+  <data name="EditPlaylist" xml:space="preserve">
+    <value>ערוך פלייליסט</value>
+  </data>
+  <data name="endDate" xml:space="preserve">
+    <value>סיום</value>
+  </data>
+  <data name="endDateTitle" xml:space="preserve">
+    <value>תאריך סיום הצבעה</value>
+  </data>
+  <data name="endOfVoting" xml:space="preserve">
+    <value>סיום הצבעה</value>
+  </data>
+  <data name="favorite" xml:space="preserve">
+    <value>מועדף</value>
+  </data>
+  <data name="general" xml:space="preserve">
+    <value>כללי</value>
+  </data>
+  <data name="image" xml:space="preserve">
+    <value>תמונה</value>
+  </data>
+  <data name="import" xml:space="preserve">
+    <value>ייבוא שירים חדשים</value>
+  </data>
+  <data name="importExplanation" xml:space="preserve">
+    <value>ייבוא שירים חדשים מאפשר להוסיף לקולולו שירים שמתפרסמים על הקיר באופן אוטומטי. ניתן לייבא רק שירים שהתפרסמו על ידי מנהלי העמוד בפייסבוק.</value>
+  </data>
+  <data name="includeEndDate" xml:space="preserve">
+    <value>כולל תאריך סיום</value>
+  </data>
+  <data name="managers" xml:space="preserve">
+    <value>מנהלים</value>
+  </data>
+  <data name="manualImport" xml:space="preserve">
+    <value>ייבוא ידני</value>
+  </data>
+  <data name="manualImportTitle" xml:space="preserve">
+    <value>ייבא פוסטים של מנהל</value>
+  </data>
+  <data name="manualPostToWall" xml:space="preserve">
+    <value>פרסום תקופתי לקיר</value>
+  </data>
+  <data name="manualPostToWallExplanation" xml:space="preserve">
+    <value>קולולו מפרסמת הודעות לקיר מעת לעת באופן אוטומטי. ההודעה תפרסם את השירים המובילים בפלייליסט ברירת מחדל.</value>
+  </data>
+  <data name="maxSongsTitle" xml:space="preserve">
+    <value>מספר שירים מקסימלי שהמשתמש יוכל להוסיף לפלייליסט</value>
+  </data>
+  <data name="name" xml:space="preserve">
+    <value>שם</value>
+  </data>
+  <data name="newPlaylist" xml:space="preserve">
+    <value>פלייליסט חדש</value>
+  </data>
+  <data name="playlist" xml:space="preserve">
+    <value>פלייליסט</value>
+  </data>
+  <data name="playlistName" xml:space="preserve">
+    <value>שם פלייליסט</value>
+  </data>
+  <data name="playlists" xml:space="preserve">
+    <value>פלייליסטים</value>
+  </data>
+  <data name="playlistSettings" xml:space="preserve">
+    <value>הגדרות פלייליסט</value>
+  </data>
+  <data name="postImageOrVideo" xml:space="preserve">
+    <value>פרסום של תמונה או וידאו</value>
+  </data>
+  <data name="postImageOrVideoExplanation" xml:space="preserve">
+    <value>כשמפרסמים פוסט בפייסבוק האם תופיע תמונה של השיר או וידאו? מומלץ לבחור תמונה, מכיוון שאז ההודעה
+                            לא תלך לספאם.</value>
+  </data>
+  <data name="postToWall" xml:space="preserve">
+    <value>פרסום לקיר</value>
+  </data>
+  <data name="ratings" xml:space="preserve">
+    <value>הצבעות</value>
+  </data>
+  <data name="removeManager" xml:space="preserve">
+    <value>הסר מנהל</value>
+  </data>
+  <data name="setDefaultPlaylist" xml:space="preserve">
+    <value>קבע ברירת מחדל</value>
+  </data>
+  <data name="songLimit" xml:space="preserve">
+    <value>שירים</value>
+  </data>
+  <data name="songLimitTitle" xml:space="preserve">
+    <value>הגבלת שירים</value>
+  </data>
+  <data name="songs" xml:space="preserve">
+    <value>שירים</value>
+  </data>
+  <data name="synchornizeNow" xml:space="preserve">
+    <value>סנכרן עכשיו</value>
+  </data>
+  <data name="synchronize" xml:space="preserve">
+    <value>סנכרון עם פייסבוק</value>
+  </data>
+  <data name="synchronizeExplanation" xml:space="preserve">
+    <value>תהליך הסנכרון מעדכן את הלייקים ומספר התגובות של כל השירים
+                המופיעים בכל הפלייליסטים.
+                תהליך הסנכרון מופעל באופן אוטומטית מדי כמה דקות.</value>
+  </data>
+  <data name="synchronizeManually" xml:space="preserve">
+    <value>באפשרותך להפעיל את הסנכרון באופן ידני בכל עת.</value>
+  </data>
+  <data name="timedUpdatePosts" xml:space="preserve">
+    <value>פרסם עדכוני מצב תקופתיים</value>
+  </data>
+  <data name="updateWallAdmin" xml:space="preserve">
+    <value>עדכן Wall בעת הוספת שיר של מנהל</value>
+  </data>
+  <data name="updateWallUser" xml:space="preserve">
+    <value>עדכן Wall בעת הוספת שיר של משתמש</value>
+  </data>
+  <data name="user" xml:space="preserve">
+    <value>משתמש</value>
+  </data>
+  <data name="video" xml:space="preserve">
+    <value>וידאו</value>
+  </data>
+  <data name="viewProfile" xml:space="preserve">
+    <value>פרופיל</value>
+  </data>
+  <data name="what" xml:space="preserve">
+    <value>מה?</value>
+  </data>
+  <data name="disable" xml:space="preserve">
+    <value>בטל</value>
+  </data>
+  <data name="enable" xml:space="preserve">
+    <value>אפשר</value>
+  </data>
+  <data name="settingsLanguage" xml:space="preserve">
+    <value>שפת ממשק ברירת מחדל:</value>
+  </data>
+  <data name="settingLanguageSelectorLabel" xml:space="preserve">
+    <value>שפה:</value>
+  </data>
+  <data name="settingsLanguageExplanation" xml:space="preserve">
+    <value>שפת ממשק ברירת מחדל עבור משתמשי האפליקציה.</value>
+  </data>
+  <data name="settingsLanguageUserSelected" xml:space="preserve">
+    <value>&lt;לפי בחירת משתמש&gt;</value>
+  </data>
+</root>

@@ -1,0 +1,44 @@
+﻿@using Resources = Kululu.Web.Views.Playlist
+
+<div id="player">
+    <div id="playerScreen">
+        <div id="playerAwrapper">
+            <div id='ytapiplayerA' class='clearfix'></div>
+        </div>
+        <div id="playerBwrapper">
+            <div id='ytapiplayerB' class='clearfix'></div>
+        </div>
+    </div>
+</div>
+<div id="timeline">
+    <div class="timeline">
+        <div class="inner">
+            <span class="startTime"></span>
+            <span class="stopTime"></span>
+            <div class="fulltime clearfix">
+                <span class="time"></span>
+                <div class="slider"></div>
+            </div>
+        </div>
+    </div>
+    <div class="top clearfix">
+        <div class="titleWrapper">
+            <span class="title"></span>
+        </div>
+        <ul class="navigation">
+            <li class="play">
+                <a href="javascript:void(0);" class="btnPlayerPlay" title="@Resources.Playlist.play">
+                    <img src="@Url.Content("~/Content/img/img_trans.gif")"/>
+                </a>
+                <a href="javascript:void(0);" class="btnPlayerPause" title="@Resources.Playlist.stop">
+                    <img src="@Url.Content("~/Content/img/img_trans.gif")"/>
+                </a>
+            </li>
+            <li class="next">
+                <a href="javascript:void(0);" class="btnPlayerNext" title="@Resources.Playlist.nextSong">
+                    <img src="@Url.Content("~/Content/img/img_trans.gif")"/>
+                </a>                
+            </li>
+        </ul>
+    </div>
+</div>

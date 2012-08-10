@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Comment CommentText="Application Core">
+    <Position X="0.51" Y="0.5" Height="0.781" Width="1.554" />
+  </Comment>
+  <Comment CommentText="common &#xD;&#xA;">
+    <Position X="8.948" Y="0.99" Height="0.75" Width="1.7" />
+  </Comment>
+  <Class Name="Kululu.Entities.AggregatedRating">
+    <Position X="1" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAJgIAAAAAAAAAAAAAAgIAACgABAAAACAAIAABAQQA=</HashCode>
+      <FileName>AggregatedRating.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Kululu.Entities.FbUser" BaseTypeListCollapsed="true">
+    <Position X="3.5" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIATiAAEAAAAgICAAQACAIQAAgAgAAAAAAAAAAAAEAA=</HashCode>
+      <FileName>FbUser.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="SignificantOther" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Kululu.Entities.Playlist" BaseTypeListCollapsed="true">
+    <Position X="6" Y="2.25" Width="2" />
+    <AssociationLine Name="Visits" Type="Kululu.Entities.Visit">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="-0.685" Y="0.084" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>YABCgACBAAQgAAVAAgBgDYUIDwAACBEIAABAAkAKIAA=</HashCode>
+      <FileName>Playlist.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Owner" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Property Name="Ratings" />
+      <Property Name="CoOwners" />
+      <Property Name="Visits" />
+    </ShowAsCollectionAssociation>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Kululu.Entities.PlaylistSongRating">
+    <Position X="3.5" Y="1.25" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAASgAACAAEDAAEAAAAACAmAAAAAQAAAEgAAgAAAACA=</HashCode>
+      <FileName>PlaylistSongRating.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Kululu.Entities.RatingDetails" BaseTypeListCollapsed="true">
+    <Position X="3.5" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIACgAAAAAAAAAAAAAAAAIEAAgAAAAkAAAAABACAAQA=</HashCode>
+      <FileName>RatingDetails.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="VotingUser" />
+      <Property Name="SongsStatistics" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Kululu.Entities.Song">
+    <Position X="1" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAChAAAAAACAAAAAAAAgIUAAgAAAACAAAAAAACAAAA=</HashCode>
+      <FileName>Song.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Kululu.Entities.Visit">
+    <Position X="6" Y="11.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACTgAAAAAAAAAAAAAAAAIAAAgAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Visit.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Enum Name="Kululu.Entities.Common.RatingType">
+    <Position X="12.5" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAgBAAAAAAAAAAAAACA=</HashCode>
+      <FileName>Common\RatingType.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Kululu.Entities.Common.SortOptions">
+    <Position X="10.75" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAEAAAAAAAAAAAAAAAAAAAAAAEAAQAAAAEAAAA=</HashCode>
+      <FileName>Common\SortOptions.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Kululu.Entities.Common.UserStatus">
+    <Position X="9" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAQAAAAAABBAAAAAAAAAAAAAAAAAIAAAAAA=</HashCode>
+      <FileName>Common\UserStatus.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

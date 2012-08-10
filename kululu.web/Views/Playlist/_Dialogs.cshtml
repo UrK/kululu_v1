@@ -1,0 +1,32 @@
+﻿@model string
+           
+<div class="postMessage dialogue">
+    <h1>הוספת שיר חדש</h1>
+    <p>
+    ערוך את ההודעה שתתפרסם על הקיר
+    </p>
+    <div class="inputWrapper">
+        <textarea name="msg">קולולו! הוספתי שיר חדש לפלייליסט של <*= this.playlistName *>.</textarea>
+    </div>
+    <div class="media group">
+        <img src="<*=this.img*>"/>
+        <div class="bd group">
+            <div class="link <*=this.language*>">
+                <a><*=this.link*></a>
+            </div>
+            <div class="caption">
+                <a class="caption"><*=this.caption*></a>
+            </div>
+            <div description>
+                <span class="description">קולולו! כל כך הרבה שירים, כל כך מעט מקום.</span>
+                <div class="inputWrapper">
+                    <textarea name="description"></textarea>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="actions">
+        <button class="ui-btnSubmit">פרסם</button>
+        <a class="ui-btnCancel">בטל הוספה</a>
+    </div>
+</div>

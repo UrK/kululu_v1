@@ -1,0 +1,54 @@
+﻿@model Kululu.Web.Models.PlaylistWithUserDTO
+@using Resources = Kululu.Web.App_GlobalResources
+@{
+    ViewBag.Title = "Playlist Settings";
+    ViewBag.CurrentPlaylistId = Model.Playlist.Id;
+    Layout = MVC.Shared.Views._LayoutMain;    
+}
+
+@section Scripts
+{
+   <script type="text/javascript">
+        if (typeof(Globals) == 'undefined') {
+            Globals = [];
+        };
+        $.extend(Globals, {
+            localBusiness: {
+                Id: @Model.Playlist.Id,
+                fanPageId: @Model.Playlist.FanPageId, //TODO: change to take from localbiz
+                isUserPostRequired: "@Model.Playlist.PublishUserContentToWall" == 'True',
+                isAdminPostRequired: "@Model.Playlist.PublishAdminContentToWall" == 'True'
+            },
+            User: {
+                FBID: @Model.User.FBID,
+                IsPageAdmin: "@Model.User.IsPageAdmin" == 'True',
+                name: "@Model.User.name",
+                numOfSongsLeft: @Model.User.numOfSongsLeft,
+                role: "@Model.User.role",
+                score: @Model.User.score,
+                HasLikedPage: "@Model.User.HasLikedPage" == 'True',
+                isConnected : "@Model.User.IsConnected" == 'True'
+            }
+        });
+    </script>
+    <script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
+}
+@section CSS
+{
+    <link rel="stylesheet" type="text/css" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.15/themes/overcast/jquery-ui.css"/>
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/css/settings.css")"/>
+}
+@section ScriptsEND
+{
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.min.js" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/jquery.tipsy.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/dateTimePicker/jquery-ui-timepicker-addon.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/settings.js")" type="text/javascript"></script>
+}
+<div class="header cleafix">
+    <h1>@Resources.Settings.playlistSettings</h1>
+    <a href="@Url.Content("~/LocalBusiness/Settings?id=")@Model.Playlist.LocalBusinessId" class="ui-btnBack">@Resources.Strings.back</a>
+</div>
+<div class="content clearfix">
+    @Html.Partial(MVC.Settings.Views._Settings, Model)
+</div>

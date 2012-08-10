@@ -1,0 +1,270 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="aDayAgo" xml:space="preserve">
+    <value>לפני יום</value>
+  </data>
+  <data name="adminNoLimit" xml:space="preserve">
+    <value>בתור מנהל הפלייליסט, תוכל להוסיף שירים ללא הגבלה.</value>
+  </data>
+  <data name="ago" xml:space="preserve">
+    <value>לפני</value>
+  </data>
+  <data name="aMinuteAgo" xml:space="preserve">
+    <value>לפני דקה</value>
+  </data>
+  <data name="anHoursAgo" xml:space="preserve">
+    <value>לפני שעה</value>
+  </data>
+  <data name="aSecondAgo" xml:space="preserve">
+    <value>לפני שניה</value>
+  </data>
+  <data name="aYearAgo" xml:space="preserve">
+    <value>לפני שנה</value>
+  </data>
+  <data name="close" xml:space="preserve">
+    <value>סגור</value>
+  </data>
+  <data name="createSongDefaultDescription" xml:space="preserve">
+    <value>קולולו! כל כך הרבה שירים, כל כך מעט מקום</value>
+  </data>
+  <data name="createSongDefaultMessage" xml:space="preserve">
+    <value>קולולו! הוספתי שיר חדש לפלייליסט של</value>
+  </data>
+  <data name="days" xml:space="preserve">
+    <value>ימים</value>
+  </data>
+  <data name="didntVoteFor" xml:space="preserve">
+    <value>יש לך {0} שירים חדשים.</value>
+  </data>
+  <data name="errorPlayingSong" xml:space="preserve">
+    <value>אופס. קרתה שגיאה. לא ניתן לנגן את השיר.</value>
+  </data>
+  <data name="femaleLiked" xml:space="preserve">
+    <value>אהבה</value>
+  </data>
+  <data name="femaleNotLiked" xml:space="preserve">
+    <value>לא אהבה</value>
+  </data>
+  <data name="guideBuckleUp" xml:space="preserve">
+    <value>&lt;h2&gt;תודה שהצטרפת לקולולו!&lt;/h2&gt;&lt;p&gt; תחגור חגורה, ותחזיק חזק. אנחנו יוצאים לדרך!&lt;/p&gt;</value>
+  </data>
+  <data name="guideButtonCancel" xml:space="preserve">
+    <value>אני בשלילה (ביטול)</value>
+  </data>
+  <data name="guideButtonGo" xml:space="preserve">
+    <value>יאללה!</value>
+  </data>
+  <data name="guideFirstStage" xml:space="preserve">
+    <value>&lt;p&gt;שלב ראשון - מתחברים.&lt;br/&gt;ככה נוכל לבחור שירים, לדרג ולהשפיע&lt;/p&gt;</value>
+  </data>
+  <data name="guideLetsStart" xml:space="preserve">
+    <value>מתחילים!</value>
+  </data>
+  <data name="guideTitle" xml:space="preserve">
+    <value>קולולו!</value>
+  </data>
+  <data name="guideTutorialLetsStart" xml:space="preserve">
+    <value>בוא נתחיל</value>
+  </data>
+  <data name="guideTutorialNext" xml:space="preserve">
+    <value>הבנתי, מה עוד?</value>
+  </data>
+  <data name="guideTutorialNext2" xml:space="preserve">
+    <value>וואלאק, מה עוד?</value>
+  </data>
+  <data name="guideTutorialStep1" xml:space="preserve">
+    <value>&lt;h2&gt;איך מוסיפים או מחפשים שיר?&lt;/h2&gt;&lt;p&gt; כמו בגוגל, מתחילים להקליד. תוך כדי הקלדה קולולו מחפשת בכל השירים בעולם(!) את התוצאות תוכל לראות ברשימה מתחת לחיפוש.&lt;br/&gt;עכשיו נותר רק להצביע  ע\"י לחיצה על הלב משמאל.&lt;/p&gt;</value>
+  </data>
+  <data name="guideTutorialStep2" xml:space="preserve">
+    <value>&lt;h2&gt;הניקוד שלך&lt;/h2&gt;&lt;p&gt;בקולולו יש גם נקודות! מקבלים אותם על כל מני פעולות, כמו הצבעה, הוספת שירים ופעילויות נוספות שפשוט תצטרך לגלות.&lt;br/&gt;עם הנקודות האלה אפשר להשוויץ, או לדרוש מבעל העמוד להביא לכם פרסים.&lt;/p&gt;</value>
+  </data>
+  <data name="guideTutorialStep3" xml:space="preserve">
+    <value>&lt;h2&gt;שירים חדשים&lt;/h2&gt;&lt;p&gt;כאן תוכל לראות כמה שירים חדשים יש בפלייליסט. שירים חדשים הם כאלה שעדיין לא הספקת להצביע להם.&lt;/p&gt;</value>
+  </data>
+  <data name="guideTutorialStop" xml:space="preserve">
+    <value>אני מסתדר</value>
+  </data>
+  <data name="guideWelcome" xml:space="preserve">
+    <value>&lt;p class='quote'&gt;\"כל כך הרבה שירים, כל כך מעט מקום, אתם רק צריכים לבחור איתי.\"&lt;/p&gt;&lt;p&gt;קולולו זו דרך חברתית חדשה וכיפית לבחור שירים.&lt;/p&gt;&lt;p&gt;מה שצריך לעשות זה להוסיף לפלייליסט את השירים שאתם אוהבים ולהתחיל להצביע.&lt;/p&gt;&lt;p class='last'&gt;ותזכרו, מי שמצביע משמיע! קולולו!&lt;/p&gt;</value>
+  </data>
+  <data name="hours" xml:space="preserve">
+    <value>שעות</value>
+  </data>
+  <data name="loading" xml:space="preserve">
+    <value>טוען...</value>
+  </data>
+  <data name="maleLiked" xml:space="preserve">
+    <value>אהב</value>
+  </data>
+  <data name="maleNotLiked" xml:space="preserve">
+    <value>לא אהב</value>
+  </data>
+  <data name="minutes" xml:space="preserve">
+    <value>דקות</value>
+  </data>
+  <data name="newSongs" xml:space="preserve">
+    <value>יש שיר חדש</value>
+  </data>
+  <data name="noNewSongs" xml:space="preserve">
+    <value>אין שירים חדש</value>
+  </data>
+  <data name="ratings" xml:space="preserve">
+    <value>הצבעות</value>
+  </data>
+  <data name="seconds" xml:space="preserve">
+    <value>שניות</value>
+  </data>
+  <data name="settingIndex_cannotRemoveYourself" xml:space="preserve">
+    <value>לא ניתן להסיר את עצמך מניהול הדף</value>
+  </data>
+  <data name="settingIndex_errorWhenAddingUser" xml:space="preserve">
+    <value>חלה שגיאה בהוספת המשתמש</value>
+  </data>
+  <data name="settingIndex_harvestInit" xml:space="preserve">
+    <value>מאתחל</value>
+  </data>
+  <data name="settingIndex_settingsNotSaved" xml:space="preserve">
+    <value>שים לב, חלה שגיאה! ההגדרות לא נשמרו!</value>
+  </data>
+  <data name="settingIndex_settingsSaved" xml:space="preserve">
+    <value>תודה, ההגדרות נשמרו בהצלחה.</value>
+  </data>
+  <data name="settingIndex_userNotAdminContent" xml:space="preserve">
+    <value>*משתמש זה אינו מנהל של דף המעריצים</value>
+  </data>
+  <data name="settingIndex_userNotAdminTitle" xml:space="preserve">
+    <value>משתמש זה לא יוכל לבצע פעולות שדורשות אישור של מנהל דף</value>
+  </data>
+  <data name="votingEnded" xml:space="preserve">
+    <value>ההצבעה הסתיימה. לא ניתן להוסיף יותר שירים</value>
+  </data>
+  <data name="votingLimit" xml:space="preserve">
+    <value>סיימת את המכסה שלך להוספת השירים. כל הכבוד!</value>
+  </data>
+  <data name="votingRemaining" xml:space="preserve">
+    <value>נשארו לך עוד {0} שירים להוספה</value>
+  </data>
+  <data name="votingWillEndIn" xml:space="preserve">
+    <value>הצבעה תסתיים עוד</value>
+  </data>
+  <data name="years" xml:space="preserve">
+    <value>שנים</value>
+  </data>
+</root>

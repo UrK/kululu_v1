@@ -1,0 +1,64 @@
+﻿@model Kululu.Web.Models.PageInfoDTO
+@using Resources = Kululu.Web.App_GlobalResources
+
+<div id="nav" class="group">
+    <ul class="main_nav group">
+        <li class="playlist selected">
+            <a href="javascript:void(0);">
+                <span> @Kululu.Web.Views.Playlist.Playlist.playlists</span>
+                <p class='head-cat'>
+                    <img class='arrow' src="@Url.Content("~/Content/img/img_trans.gif")"/>
+                    <img class='icon' src="@Url.Content("~/Content/img/img_trans.gif")"/>
+                </p>
+            </a>
+            <ul class="dropdown">
+            @for (var i = 0; i < Model.Playlists.Count; i++)
+            {
+                if (!@Model.Playlists[i].IsActive)
+                {
+                    continue;
+                }
+                var selected = "";
+                if (@Model.Playlists[i].IsDefaultPlaylist)
+                {
+                    selected = "selected";
+                }
+                <li data-id="@Model.Playlists[i].Id" class="@selected">
+                    <a href="javascript:void(0);">@Model.Playlists[i].Name</a>
+                </li>
+            }
+            </ul>
+        </li>
+        <li class="wall">
+            <a href="javascript:void(0);">
+                <span> @Kululu.Web.Views.Playlist.Playlist.wall </span>
+                <p class='head-cat'>
+                    <img src="@Url.Content("~/Content/img/img_trans.gif")"/>
+                </p>
+            </a>
+        </li>
+        <li class="leaderboard">
+            <a href="javascript:void(0);">
+                <span> @Kululu.Web.Views.Playlist.Playlist.leaderboard </span>
+                <p class='head-cat'>
+                    <img src="@Url.Content("~/Content/img/img_trans.gif")"/>
+                </p>
+            </a>
+        </li>
+    </ul>
+    @if (Model.User.role == "None")
+    {
+        <a id="login" href="javascript:void(0);">@Resources.Strings.connect</a>
+    }
+    else
+    {
+        if (Model.User.IsPageAdmin || Model.User.role == "Owner")
+        {
+            <a id="settings" href="@Url.Content("~/LocalBusiness/Settings/")@Model.Id" title="@Resources.Strings.settings"><img src="@Url.Content("~/Content/img/img_trans.gif")"/></a>
+        }
+        <img class="userProfileImage" src = "https://graph.facebook.com/@Model.User.FBID/picture"/>
+        <div class="points">
+            <span title="@Kululu.Web.Views.Playlist.Playlist.yourScore">@Model.User.summedScore</span>
+        </div>
+    }
+</div>

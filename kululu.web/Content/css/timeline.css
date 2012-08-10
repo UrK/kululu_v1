@@ -1,0 +1,153 @@
+﻿#timeline
+{
+    clear: both;
+    position: relative;
+    display: none;
+}
+#timeline div.top
+{
+    height: 30px;
+    line-height: 30px;
+	padding-left: 90px;
+	padding-right: 40px;
+    background: -moz-linear-gradient(top, rgba(151,199,80,0.8) 1%, rgba(151,199,80,0.8) 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(1%,rgba(151,199,80,0.8)), color-stop(100%,rgba(151,199,80,0.8)));
+    background: -webkit-linear-gradient(top, rgba(151,199,80,0.8) 1%,rgba(151,199,80,0.8) 100%);
+    background: -o-linear-gradient(top, rgba(151,199,80,0.8) 1%,rgba(151,199,80,0.8) 100%);
+    background: -ms-linear-gradient(top, rgba(151,199,80,0.8) 1%,rgba(151,199,80,0.8) 100%);
+    background: linear-gradient(top, rgba(151,199,80,0.8) 1%,rgba(151,199,80,0.8) 100%);
+	filter: ~"progid:DXImageTransform.Microsoft.gradient( startColorstr='#ccfcefa6', endColorstr='#ccfcefa6',GradientType=0 )"; /* IE6-9 */
+}
+#timeline div.top div.titleWrapper
+{
+    float: right;
+    width: 100%;
+	min-height: 1px;
+	text-align: right;
+}
+#timeline div.top span.title
+{
+	text-overflow: ellipsis;
+	color: White;
+}
+#timeline ul.navigation
+{
+    margin-left: -90px;
+    float: left;
+    width: 90px;
+}
+#timeline ul.navigation li 
+{
+    float: left;
+}
+#timeline ul.navigation a 
+{
+    display: inline-block;
+    height: 30px;
+    line-height: 30px;
+    width: 44px;
+    padding: 0;
+    border-right: solid 1px #4E8D3A;
+    background-color: #6CA659;
+    text-align: center;
+}
+#timeline ul.navigation a:hover
+{
+    background-color: #5E904E;
+}
+#timeline ul.navigation a img
+{
+    display: inline-block;
+    margin-top: 7px;
+    padding: 0;
+    background-image: url(../img/player_buttons.png);
+    width: 20px;
+    height: 15px;    
+}
+#timeline a.btnPlayerPlay img 
+{
+    background-position: 0 0;
+}
+#timeline ul.navigation a.btnPlayerPlay
+{
+    display: block;
+}
+#timeline a.btnPlayerPause
+{
+    display: none;
+}
+#timeline a.btnPlayerPause img 
+{
+    background-position: -80px 0;
+}
+#timeline a.btnVote img 
+{
+    background-position: -40px 0;
+}
+#timeline a.btnPlayerNext img 
+{
+    background-position: -120px 0;
+}
+
+/**************************************************/
+#timeline div.timeline
+{
+    position: absolute;
+    top: -22px;
+    left: 0;
+    width: 100%;
+    background-color: #222222;
+    direction: ltr;
+    display: none;
+}
+#timeline div.timeline .inner 
+{
+    padding: 7px 30px;
+}
+#timeline div.timeline:hover
+{
+    cursor:pointer;
+}
+.startTime, .stopTime
+{
+    font-size: 8px;
+    color: #eeeeee;
+    width: 30px;
+}
+.startTime
+{
+    float: left;
+	margin-left: -30px;
+}
+.stopTime
+{
+    float: right;
+	margin-right: -30px;
+}
+#timeline div.timeline div.fulltime
+{
+    width: 100%;
+    height: 8px;
+    position: relative;
+    background-color: #333333;
+}
+#timeline span.time
+{
+    position: absolute;
+    height: 8px;
+    left: 0;
+    z-index: 1;
+    width: 0%;
+	border-left: solid, 1px, black;
+    background-color: #ffe956;/*#fedd00;*/    
+}
+#timeline div.timeline div.slider
+{
+    position: absolute;
+    width:5px;
+    height: 8px;
+    background-color: White;
+    z-index:2;
+}
+/**************************************************/
+/**************************************************/

@@ -1,0 +1,95 @@
+﻿@using Resources = Kululu.Web.App_GlobalResources
+@model Kululu.Web.Models.PlaylistWithUserDTO
+@{
+    ViewBag.Title = "Create new Playlist";
+    ViewBag.CurrentPlaylistId = Model.Playlist.Id;
+    Layout = MVC.Shared.Views._LayoutMain;    
+}
+
+@section Scripts
+{
+    <script type="text/javascript">
+        if (typeof(Globals) == 'undefined') {
+            Globals = [];
+        };
+        $.extend(Globals, {
+            localBusiness: {
+                Id: @Model.Playlist.Id,
+                fanPageId: @Model.Playlist.FanPageId, //TODO: change to take from localbiz
+                isUserPostRequired: "@Model.Playlist.PublishUserContentToWall" == 'True',
+                isAdminPostRequired: "@Model.Playlist.PublishAdminContentToWall" == 'True'
+            },
+            User: {
+                FBID: @Model.User.FBID,
+                IsPageAdmin: "@Model.User.IsPageAdmin" == 'True',
+                name: "@Model.User.name",
+                numOfSongsLeft: @Model.User.numOfSongsLeft,
+                role: "@Model.User.role",
+                score: @Model.User.score,
+                HasLikedPage: "@Model.User.HasLikedPage" == 'True',
+                isConnected : "@Model.User.IsConnected" == 'True'
+            },
+            appId: '@((System.Configuration.ConfigurationManager.GetSection("facebookSettings") as Facebook.FacebookConfigurationSection).AppId)',
+            hfAppPath: '@(Url.Content("~") == "/" ? "" : Url.Content("~"))'
+        });
+    </script>
+    <script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
+}
+@section CSS
+{
+    <link href="@Url.Content("~/Content/css/blockmessage.css")" rel="stylesheet" type="text/css"/>
+    <link href="@Url.Content("~/Content/css/dialogs_" + PageData["dirStr"] + ".css")" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.15/themes/overcast/jquery-ui.css"/>
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/css/settings.css")"/>
+}
+@section ScriptsEND
+{
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.min.js" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/dateTimePicker/jquery-ui-timepicker-addon.js")" type="text/javascript"></script>
+    @if (HttpContext.Current.IsDebuggingEnabled)
+    {
+        <script src="@Url.Content("~/Scripts/jquery.jqote2.js")" type="text/javascript"> </script>
+        <script src="@Url.Content("~/Scripts/blockmessage.js")" type="text/javascript"> </script>
+        <script src="@Url.Content("~/Scripts/flashmessage.js")" type="text/javascript"> </script>
+        <script src="@Url.Content("~/Scripts/guiders-1.1.2.js")" type="text/javascript"> </script>
+        <script src="@Url.Content("~/Scripts/jquery.tipsy.js")" type="text/javascript"> </script>
+        <script src="@Url.Content("~/Scripts/core.js")" type="text/javascript"> </script>
+        <script src="@Url.Content("~/Scripts/facebook.js")" type="text/javascript"> </script>
+        <script src="@Url.Content("~/Scripts/ajax.js")" type="text/javascript"> </script>
+        <script src="@Url.Content("~/Scripts/autocomplete/jquery.tokeninput.js")" type="text/javascript"> </script>
+        <script src="@Url.Content("~/Scripts/extensions.js")" type="text/javascript"> </script>
+        <script src="@Url.Content("~/Scripts/kululu.js")" type="text/javascript"></script>
+    }
+    else
+    {
+        <script src="@Url.Content("~/Scripts/allmin.js")" type="text/javascript"></script>
+    }
+
+    <script src="@Url.Content("~/Scripts/settings.js")" type="text/javascript"></script>
+}
+<div class="header clearfix">
+    <h1>@Resources.Settings.newPlaylist</h1>
+    @if (Model.Playlist.LocalBusinessId > 0)
+    {
+        <a href="@Url.Content("~/LocalBusiness/Settings?id=")@Model.Playlist.LocalBusinessId" class="ui-btnBack">@Resources.Strings.back </a>
+    }
+</div>
+<div class="content clearfix">
+    @if (!Model.User.IsConnected)
+    {
+    <h2>@Resources.Strings.kululu</h2>
+    <p> @Resources.Strings.loginToApp</p>
+    <div id="connectContainer">
+        <a id="connect" href="javascript:void(0);">
+            @Resources.Strings.login
+        </a>
+    </div>
+        
+    }
+    else
+    {
+    @Html.Partial(MVC.Settings.Views._Settings, Model)
+    }
+</div>
+@*jqote templates*@
+@Html.Partial(MVC.Playlist.Views._DialoguesTemplates)

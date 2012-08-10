@@ -1,0 +1,25 @@
+﻿@model Kululu.Web.Models.PageInfoDTO
+@using Resources = Kululu.Web.App_GlobalResources
+@{string appId = (System.Configuration.ConfigurationManager.GetSection("facebookSettings") as Facebook.FacebookConfigurationSection).AppId;}
+
+@if (Model.IsCanvas) 
+{
+<div id="installme">
+    <span><a class="ui-btnSubmit green addtomypage" target="_blank" href="http://facebook.com/add.php?api_key=@appId&pages=1&page=@appId">
+        @Kululu.Web.Views.Playlist.Playlist.InstallMeButton
+    </a> @Kululu.Web.Views.Playlist.Playlist.InstallMe
+    </span>
+</div>
+}
+
+<div class="header clearfix">
+    <div class="logo">
+        <img src="@Model.ImageUrl"/>
+    </div>
+    
+    @Html.Partial(MVC.Playlist.Views._Player)
+
+@*    <div class="mainLike">
+        <iframe src="https://www.facebook.com/plugins/like.php?app_id=178340812231913&amp;href=http%3A%2F%2Fwww.facebook.com%2Fapps%2Fapplication.php%3Fid%3D182149675137227&amp;send=false&amp;layout=box_count&amp;width=100&amp;show_faces=true&amp;action=like&amp;colorscheme=light&amp;font&amp;height=90" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:65px; height:90px;" allowTransparency="true"></iframe>
+    </div>*@
+</div>

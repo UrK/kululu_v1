@@ -1,0 +1,59 @@
+﻿@{
+    ViewBag.Title = "HarvestFacebook";
+}
+
+@section Scripts{}
+
+@section ScriptsEND
+{
+    <script type="text/javascript">
+        var getStatusIntervalId = 0;
+        var getNumOfLikesIntervalId = 0;
+
+        $(document).ready(function () {
+            setTimeout(function () {
+                Globals.ajax.harvestFBStream(1, probeForUpdates);
+            }, 3000);
+        });
+
+        function probeForUpdates() {
+            getStatusIntervalId = setInterval(
+            function(){
+                Globals.ajax.getHarvestStatusUpdate(getStatusUpdate)
+            }, 10000);
+        }
+
+        function getStatusUpdate(response) {
+            if (response.statusKey == 5) {
+                console.log('clearing');
+                clearInterval(getStatusIntervalId);
+                clearInterval(getNumOfLikesIntervalId);
+            }
+
+            if (response.data.length != '') {
+                console.log(response.data.statusName);
+                console.log(response.data.statusPercentage);
+            }
+            if (response.data.statusKey == 4) {
+                if (getNumOfLikesIntervalId != 0) {
+                    return;
+                }
+                getNumOfLikesIntervalId = setInterval(
+                function () {
+                    Globals.ajax.getHarvestLikesComplete(getNumOfLikes)
+                }, 10000);
+            }
+        }
+
+        function getNumOfLikes(response) {
+            if (response.success == 1) {
+                console.log(response.data.CompleteLikes + '\\' + response.data.TotalNumOfLikes);
+            }
+        }
+    </script>
+}
+
+@section CSS{}
+
+
+

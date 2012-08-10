@@ -1,0 +1,51 @@
+﻿@using Resources = Kululu.Web.App_GlobalResources
+<ul class="wall">
+</ul>
+<div class="showMore clearfix">
+    <a href="javascript:void(0);">הצג עוד</a>
+    <img class="loading" src="@Url.Content("~/Content/img/ajax-loader2.gif")" title="@Resources.Strings.loadingTitle "/>
+</div>
+
+<script type="text/x-jqote-template" id="templateWall"><![CDATA[
+    <* $(this.songs).each(function(){ *>
+    <li class="post group" data-YouTubeId="<*=this.YouTubeID*>" data-fulltitle="<*=this.fulltitle*>" data-thumbnail="<*=this.thumbnail*>">
+        <div class="media">
+            <a href="https://www.facebook.com/profile.php?id=<*=this.CreatorId*>" target="_blank">
+                <img class="thumbnail" src = "https://graph.facebook.com/<*=this.CreatorId*>/picture" />
+            </a>
+        </div>
+        <div class="bd group">
+            <div class="wrapper">
+                <div class="user">
+                    <a href="https://www.facebook.com/profile.php?id=<*=this.CreatorId*>" target="_blank"><*=this.Creator*></a>
+                </div>
+                <div class="message">
+                    <span><*=this.Message*></span>
+                </div>
+                <div class="attachment group">
+                    <div class="media">
+                        <img class="thumbnail" src="<*=this.YouTubeThumbnail*>" />
+                    </div>
+                    <div class="bd">
+                        <div class="wrapper">
+                            <div class="link <*=this.language*>">
+                                <a href="javascript:void(0);"><*=this.fulltitle*></a>
+                            </div>
+                            <div class="caption">
+                                <a href="javascript:void(0);">www.youtube.com</a>
+                            </div>
+                            <div class="description">
+                                <span><*=this.Description*></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer">
+                    <a class="btnShare" href="javascript:void(0);">@Kululu.Web.Views.Playlist.Playlist.share</a>
+                    <span class="Timeago"><*=this.Timeago*></span>
+                </div>
+            </div>
+        </div>
+    </li>
+    <* }); *>
+]]></script>

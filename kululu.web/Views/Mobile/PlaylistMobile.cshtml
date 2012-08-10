@@ -1,0 +1,28 @@
+﻿@model Kululu.Web.Models.PlaylistDTO
+
+@{
+    ViewBag.Title = @Model.Name;
+    Layout = "~/Views/Mobile/_LayoutMobile.cshtml";
+    ViewBag.CurrentPlaylistId = Model.Id;
+}
+@section Scripts
+{
+    <script type="text/javascript" src="@Url.Content("~/Scripts/jquery.jqote2.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Mobile/playlistMobile.js")"></script>
+}
+@section ScriptsEND
+{
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Mobile/playlistViewMobile.js")"></script>
+}
+@section CSS
+{
+}
+<div data-role="header" >
+    <h1>@Model.Name</h1>
+</div> 
+<div data-role="content"> 
+    <ul id="playlist" data-role="listview">
+    </ul>
+</div>
+@*templates*@
+@Html.Partial(MVC.Mobile.Views._PlaylistMobileTemplates)

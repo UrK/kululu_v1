@@ -1,0 +1,45 @@
+﻿@model IList<Kululu.Web.Models.MemberDTO>
+@using Resources = Kululu.Web.Views.Playlist
+
+           
+@{var N = 10;}
+
+<h1>@Resources.Playlist.highVoters</h1>
+<ul>
+@for (int i = 0; i < N; i++)
+{
+    Kululu.Web.Models.MemberDTO user = null;
+    string user_href;
+    string user_img;
+    string user_name;
+    int user_score;
+
+    if (i < Model.Count)
+    {
+        user = Model[i];
+        user_href = "https://www.facebook.com/profile.php?id=" + user.FBID;
+        user_img = "https://graph.facebook.com/" + user.FBID + "/picture";
+        user_name = user.name;
+        user_score = user.score;
+    }
+    else
+    {
+        user_href = "";
+        user_img = @Url.Content("~/Content/img/img_trans.gif");
+        user_name = "";
+        user_score = 0;
+    }
+    <li class="clearfix">
+        <span class="rating">@(i + 1)</span>
+        <a href="@user_href" target="_blank" class="img">
+            <img src="@user_img"/>
+        </a>
+        <a href="@user_href" target="_blank" class="name">
+            <span class="name">@user_name</span>
+        </a>
+        <div class="scoreWrapper">
+            <span class="score">@user_score</span>
+        </div>
+    </li>
+}
+</ul>

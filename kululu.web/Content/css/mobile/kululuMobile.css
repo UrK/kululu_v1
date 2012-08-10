@@ -1,0 +1,52 @@
+﻿body {
+	direction: rtl;
+	font-family: "lucida grande",tahoma,verdana,arial,sans-serif;
+	font-size: 11px;
+	color: #333333;
+	position: relative;
+}
+a {   
+    text-decoration: none;
+	cursor: pointer;
+	color: #3a77d7;
+}  
+a:hover {   
+    text-decoration: underline !important;
+}
+h1   
+{
+    font-size: 20px;
+}  
+/**************************************************/
+/**************************************************/
+.clearfix
+{
+    overflow: hidden;
+	_overflow: visible;
+	zoom: 1;
+}
+.group:before,
+.group:after {
+    content:"";
+    display:table;
+}
+.group:after {
+    clear:both;
+}
+.group {
+    zoom:1; /* For IE 6/7 (trigger hasLayout) */
+}
+.hidden
+{
+    display:none;
+}
+.english 
+{
+    direction:ltr;
+    text-align:right;
+}
+.hebrew
+{
+    direction:rtl;
+    text-align:right;
+}

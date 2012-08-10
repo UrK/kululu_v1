@@ -1,0 +1,699 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{7427A038-8F36-4444-A339-5D5577CFB8F3}</ProjectGuid>
+    <ProjectTypeGuids>{E53F8FEA-EAE0-44A6-8774-FFD645390401};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Kululu.Web</RootNamespace>
+    <AssemblyName>Kululu.Web</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>false</UseIISExpress>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisLogFile>bin\Kululu.Web.dll.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisIgnoreBuiltInRuleSets>true</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisRuleDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <CodeAnalysisIgnoreBuiltInRules>false</CodeAnalysisIgnoreBuiltInRules>
+    <CodeAnalysisFailOnMissingRules>false</CodeAnalysisFailOnMissingRules>
+    <PackageAsSingleFile>false</PackageAsSingleFile>
+    <ExcludeGeneratedDebugSymbol>true</ExcludeGeneratedDebugSymbol>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Test|AnyCPU' ">
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisLogFile>bin\Kululu.Web.dll.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisRuleDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <CodeAnalysisIgnoreBuiltInRules>false</CodeAnalysisIgnoreBuiltInRules>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Accessibility">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="AutoMapper, Version=1.1.0.188, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DLLs\Miscelenious\AutoMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Core">
+      <HintPath>..\DLLs\nHibernate\Castle.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="EcmaScript.NET.modified">
+      <HintPath>..\packages\YUICompressor.NET-MsBuild-Task.1.6.0.2\lib\NET35\EcmaScript.NET.modified.dll</HintPath>
+    </Reference>
+    <Reference Include="Facebook, Version=4.2.1.0, Culture=neutral, PublicKeyToken=58cb4f2111d1e6de, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DLLs\Facebook\Facebook.dll</HintPath>
+    </Reference>
+    <Reference Include="Facebook.Web, Version=4.2.1.0, Culture=neutral, PublicKeyToken=58cb4f2111d1e6de, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DLLs\Facebook\Facebook.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="Facebook.Web.Mvc, Version=4.2.1.0, Culture=neutral, PublicKeyToken=58cb4f2111d1e6de, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DLLs\Facebook\Facebook.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="FluentNHibernate, Version=1.1.0.685, Culture=neutral, PublicKeyToken=8aa435e3cb308880, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DLLs\nHibernate\FluentNHibernate.dll</HintPath>
+    </Reference>
+    <Reference Include="HibernatingRhinos.Profiler.Appender.v4.0">
+      <HintPath>..\DLLs\Profiling\HibernatingRhinos.Profiler.Appender.v4.0.dll</HintPath>
+    </Reference>
+    <Reference Include="Iesi.Collections, Version=1.0.1.0, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DLLs\nHibernate\Iesi.Collections.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=1b44e1d426115821, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DLLs\Miscelenious\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Practices.ObjectBuilder2, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DLLs\Unity\Microsoft.Practices.ObjectBuilder2.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity, Version=1.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DLLs\Unity\Microsoft.Practices.Unity.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.Configuration, Version=1.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DLLs\Unity\Microsoft.Practices.Unity.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.Interception, Version=1.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DLLs\Unity\Microsoft.Practices.Unity.Interception.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.Interception.Configuration, Version=1.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DLLs\Unity\Microsoft.Practices.Unity.Interception.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.StaticFactory, Version=1.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DLLs\Unity\Microsoft.Practices.Unity.StaticFactory.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="mysql.data, Version=6.4.4.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\MySql.Data.6.4.4\lib\net40\mysql.data.dll</HintPath>
+    </Reference>
+    <Reference Include="NHibernate, Version=3.1.0.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DLLs\nHibernate\NHibernate.dll</HintPath>
+    </Reference>
+    <Reference Include="NHibernate.ByteCode.Castle, Version=3.1.0.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DLLs\nHibernate\NHibernate.ByteCode.Castle.dll</HintPath>
+    </Reference>
+    <Reference Include="Omu.ValueInjecter">
+      <HintPath>..\DLLs\Miscelenious\Omu.ValueInjecter.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Web.Mvc, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Helpers">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DynamicData">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Entity">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.ApplicationServices">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Abstractions">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Routing">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Yahoo.Yui.Compressor">
+      <HintPath>..\packages\YUICompressor.NET-MsBuild-Task.1.6.0.2\lib\NET35\Yahoo.Yui.Compressor.dll</HintPath>
+    </Reference>
+    <Reference Include="Yahoo.Yui.Compressor.MsBuildTask, Version=1.6.0.2, Culture=neutral, PublicKeyToken=f8b4b81ec75097e2, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\YUICompressor.NET-MsBuild-Task.1.6.0.2\lib\NET35\Yahoo.Yui.Compressor.MsBuildTask.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AccountController.generated.cs">
+      <DependentUpon>T4MVC.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Shared\Welcome.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Welcome.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="App_GlobalResources\Errors.he.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Errors.he.resx</DependentUpon>
+    </EmbeddedResource>
+    <Compile Include="App_GlobalResources\HarvesterStatus.he.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HarvesterStatus.he.resx</DependentUpon>
+    </Compile>
+    <Compile Include="FbGraphController.generated.cs">
+      <DependentUpon>T4MVC.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Playlist\Playlist.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Playlist.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Playlist\Playlist.he.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Playlist.he.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Settings.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\Settings.he.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Settings.he.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\Strings.he.designer.cs">
+      <DependentUpon>Strings.he.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="App_GlobalResources\Errors.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Errors.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\HarvesterStatus.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HarvesterStatus.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Attributes\DateGreaterThanAttribute.cs" />
+    <Compile Include="Attributes\PropertyFalseAttribute.cs" />
+    <Compile Include="Attributes\RequireRequestValue.cs" />
+    <Compile Include="Attributes\RequireRouteValuesAttribute .cs" />
+    <Compile Include="BaseController.generated.cs">
+      <DependentUpon>T4MVC.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Common\PlaylistConfiguration.cs" />
+    <Compile Include="Common\SessionVariables.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\BaseController.cs" />
+    <Compile Include="Controllers\EnableJsonAttribute.cs" />
+    <Compile Include="Controllers\FacebookController.cs" />
+    <Compile Include="Controllers\FbStreamHarvestController.cs" />
+    <Compile Include="Controllers\JsonResult2.cs" />
+    <Compile Include="Controllers\PlaylistController.cs" />
+    <Compile Include="Controllers\LocalBusinessController.cs" />
+    <Compile Include="FacebookController.generated.cs">
+      <DependentUpon>T4MVC.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Facebook\FbmlFacebookSession.cs" />
+    <Compile Include="Facebook\FBSignedRequestManager.cs" />
+    <Compile Include="FbStreamHarvestController.generated.cs">
+      <DependentUpon>T4MVC.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="LocalBusinessController.generated.cs">
+      <DependentUpon>T4MVC.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MobileController.generated.cs">
+      <DependentUpon>T4MVC.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ActivityStreamDTO.cs" />
+    <Compile Include="Models\Common\DataBaseUpdateResponse.cs" />
+    <Compile Include="Models\Common\UserPrivileges.cs" />
+    <Compile Include="Models\EntityIdAndResponseDTO.cs" />
+    <Compile Include="Models\LocalBusinessDTO.cs" />
+    <Compile Include="Models\MemberDTO.cs" />
+    <Compile Include="Models\PageInfoDTO.cs" />
+    <Compile Include="Models\PlaylistDTO.cs" />
+    <Compile Include="Models\PlaylistWithUserDTO.cs" />
+    <Compile Include="Models\SongWithUserRatingDTO.cs" />
+    <Compile Include="Models\UserDTO.cs" />
+    <Compile Include="MultiCultureMvcRouteHandler.cs" />
+    <Compile Include="PlaylistController.generated.cs">
+      <DependentUpon>T4MVC.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SettingsController.generated.cs">
+      <DependentUpon>T4MVC.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Common\BrowserInfo.cs" />
+    <Compile Include="SharedController.generated.cs">
+      <DependentUpon>T4MVC.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Startup\Binders\CommonDateTime.cs" />
+    <Compile Include="Startup\Binders\NullableLocalDateTimeBinder.cs" />
+    <Compile Include="Startup\ContextLifetimeManager.cs" />
+    <Compile Include="Startup\FbCookieInfo.cs" />
+    <Compile Include="Startup\HttpApplicationStateExtensions.cs" />
+    <Compile Include="Startup\Binders\LocalDateTimeBinder.cs" />
+    <Compile Include="Startup\LogFactory.cs" />
+    <Compile Include="Startup\ObjectsPersistance.cs" />
+    <Compile Include="Startup\Initializer.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Startup\SessionFactory.cs" />
+    <Compile Include="Startup\UnityControllerFactory.cs" />
+    <Compile Include="App_GlobalResources\Strings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Strings.resx</DependentUpon>
+    </Compile>
+    <Compile Include="T4MVC.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>T4MVC.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Shared\Shared.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Shared.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Shared\Shared.he.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Shared.he.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Views\Shared\Welcome.he.resx" />
+    <EmbeddedResource Include="Views\Shared\Welcome.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Welcome.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\css\allmin_ltr.css" />
+    <Content Include="Content\css\allmin_rtl.css" />
+    <Content Include="Content\css\blockmessage.css" />
+    <None Include="Content\css\chart.less" />
+    <Content Include="Content\css\chart_ltr.css" />
+    <Content Include="Content\css\chart_rtl.css" />
+    <Content Include="Content\css\dialogs_ltr.css" />
+    <Content Include="Content\css\dialogs_rtl.css" />
+    <Content Include="Content\css\guiders-1.1.2_ltr.css" />
+    <Content Include="Content\css\guiders-1.1.2_rtl.css" />
+    <Content Include="Content\css\IEFilters.css" />
+    <Content Include="Content\css\images\ui-bg_diagonals-thick_18_b81900_40x40.png" />
+    <Content Include="Content\css\images\ui-bg_diagonals-thick_20_666666_40x40.png" />
+    <Content Include="Content\css\images\ui-bg_flat_10_000000_40x100.png" />
+    <Content Include="Content\css\images\ui-bg_glass_100_f6f6f6_1x400.png" />
+    <Content Include="Content\css\images\ui-bg_glass_100_fdf5ce_1x400.png" />
+    <Content Include="Content\css\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\css\images\ui-bg_gloss-wave_35_f6a828_500x100.png" />
+    <Content Include="Content\css\images\ui-bg_highlight-soft_100_eeeeee_1x100.png" />
+    <Content Include="Content\css\images\ui-bg_highlight-soft_75_ffe45c_1x100.png" />
+    <Content Include="Content\css\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\css\images\ui-icons_228ef1_256x240.png" />
+    <Content Include="Content\css\images\ui-icons_ef8c08_256x240.png" />
+    <Content Include="Content\css\images\ui-icons_ffd27a_256x240.png" />
+    <Content Include="Content\css\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="Content\css\katom_oebold-webfont.svg" />
+    <Content Include="Content\css\kululu-ie.css" />
+    <Content Include="Content\css\kululu_ltr.css" />
+    <Content Include="Content\css\kululu_rtl.css" />
+    <Content Include="Content\css\language\ltr.css" />
+    <Content Include="Content\css\language\rtl.css" />
+    <Content Include="Content\css\leaderboard_ltr.css" />
+    <Content Include="Content\css\leaderboard_rtl.css" />
+    <Content Include="Content\css\mobile\kululuMobile.css" />
+    <Content Include="Content\css\mobile\playlistMobile.css" />
+    <Content Include="Content\css\playlist_ltr.css" />
+    <Content Include="Content\css\playlist_rtl.css" />
+    <Content Include="Content\css\reset.css" />
+    <Content Include="Content\css\settings-index_ltr.css" />
+    <Content Include="Content\css\settings-index_rtl.css" />
+    <Content Include="Content\css\settings.css" />
+    <Content Include="Content\css\player.css" />
+    <Content Include="Content\css\wall_ltr.css" />
+    <Content Include="Content\css\wall_rtl.css" />
+    <Content Include="Content\css\welcome_ltr.css" />
+    <Content Include="Content\css\welcome_rtl.css" />
+    <Content Include="Content\headers\107307049326456_header.jpg" />
+    <Content Include="Content\headers\121719627868385_header.jpg" />
+    <Content Include="Content\headers\127174283963945_header.jpg" />
+    <Content Include="Content\headers\127174283963945_like.jpg" />
+    <Content Include="Content\headers\135859206490031_header.jpg" />
+    <Content Include="Content\headers\147147965366825_header.jpg" />
+    <Content Include="Content\headers\147147965366825_like.png" />
+    <Content Include="Content\headers\147584488610340_header.jpg" />
+    <Content Include="Content\headers\147584488610340_like.jpg" />
+    <Content Include="Content\headers\183757838231_header.jpg" />
+    <Content Include="Content\headers\8842222386_header.png" />
+    <Content Include="Content\img\ajax-loader.gif" />
+    <Content Include="Content\img\ajax-loader2.gif" />
+    <Content Include="Content\img\ajax-loader3.gif" />
+    <Content Include="Content\img\arrows.png" />
+    <Content Include="Content\img\bg_stripes.png" />
+    <Content Include="Content\img\bg_stripes03.png" />
+    <Content Include="Content\img\default_feedback.png" />
+    <Content Include="Content\img\default_periodic.png" />
+    <Content Include="Content\img\facebook_login.png" />
+    <Content Include="Content\img\favicon.ico" />
+    <Content Include="Content\img\header.png" />
+    <Content Include="Content\img\img_trans.gif" />
+    <Content Include="Content\img\like_world.jpg" />
+    <Content Include="Content\img\logo.png" />
+    <Content Include="Content\img\mobile\contactUs.png" />
+    <Content Include="Content\img\mobile\contentBg.png" />
+    <Content Include="Content\img\mobile\facebook.png" />
+    <Content Include="Content\img\mobile\header-iphoneBattery.png" />
+    <Content Include="Content\img\mobile\header-iphoneStatistics.png" />
+    <Content Include="Content\img\mobile\header-left.png" />
+    <Content Include="Content\img\mobile\header-right.png" />
+    <Content Include="Content\img\mobile\header.png" />
+    <Content Include="Content\img\mobile\headerBG.png" />
+    <Content Include="Content\img\mobile\nowPlaying-hover.png" />
+    <Content Include="Content\img\mobile\playlist.png" />
+    <Content Include="Content\img\mobile\youtube.png" />
+    <Content Include="Content\img\nav.png" />
+    <Content Include="Content\img\navSprite.png" />
+    <Content Include="Content\img\options_default.png" />
+    <Content Include="Content\img\options_hover.png" />
+    <Content Include="Content\img\player_buttons.png" />
+    <Content Include="Content\img\searchloader.png" />
+    <Content Include="Content\img\smallLike.png" />
+    <Content Include="Content\img\stripes_back.png" />
+    <Content Include="Content\img\tipsy.gif" />
+    <Content Include="Content\img\votes_sprites.png" />
+    <Content Include="Content\img\welcome.jpg" />
+    <Content Include="Content\login-button.png" />
+    <None Include="Content\css\guiders-1.1.2.less" />
+    <None Include="Content\css\welcome.less" />
+    <None Include="minify.xml" />
+    <Content Include="Flash\KululuPlayer.swf" />
+    <Content Include="Global.asax" />
+    <Content Include="kululu_error.html" />
+    <Content Include="Scripts\ajax.js" />
+    <Content Include="Scripts\allmin.js" />
+    <Content Include="Scripts\autocomplete\jquery.tokeninput.js" />
+    <Content Include="Scripts\autocomplete\token-input-facebook.css" />
+    <Content Include="Scripts\bbcode.js" />
+    <Content Include="Scripts\blockmessage.js" />
+    <Content Include="Scripts\chartAux.js" />
+    <Content Include="Scripts\core.js" />
+    <Content Include="Scripts\dateTimePicker\dateTimePicker.css" />
+    <Content Include="Scripts\extensions.js" />
+    <Content Include="Scripts\facebook.js" />
+    <Content Include="Scripts\flashmessage.js" />
+    <Content Include="Scripts\guiders-1.1.2.js" />
+    <Content Include="Scripts\dateTimePicker\jquery-ui-timepicker-addon.js" />
+    <Content Include="Scripts\jquery.jqote2.js" />
+    <Content Include="Scripts\jquery.timeline.js" />
+    <Content Include="Scripts\jquery.tipsy.js" />
+    <Content Include="Scripts\kululu.js" />
+    <Content Include="Scripts\less-1.1.4.min.js" />
+    <Content Include="Scripts\Mobile\kululuMobile.js" />
+    <Content Include="Scripts\Mobile\playlistMobile.js" />
+    <Content Include="Scripts\Mobile\playlistViewMobile.js" />
+    <Content Include="Scripts\mbrevoort-jquery-facebook-multi-friend-selector-aad960a\jquery.facebook.multifriend.select-list.css" />
+    <Content Include="Scripts\mbrevoort-jquery-facebook-multi-friend-selector-aad960a\jquery.facebook.multifriend.select.css" />
+    <Content Include="Scripts\mbrevoort-jquery-facebook-multi-friend-selector-aad960a\jquery.facebook.multifriend.select.js" />
+    <Content Include="Scripts\player.js" />
+    <Content Include="Scripts\chart.js" />
+    <Content Include="Scripts\settings-index.js" />
+    <Content Include="Scripts\settings.js" />
+    <Content Include="Scripts\main.js" />
+    <Content Include="Scripts\wall.js" />
+    <Content Include="Scripts\welcome.js" />
+    <Content Include="Views\_ViewStart.cshtml">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Views\Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Views\Playlist\_Dialogs.cshtml" />
+    <Content Include="Views\Account\TestUser.cshtml" />
+    <Content Include="Views\LocalBusiness\ServerStatusPingdom.cshtml" />
+    <Content Include="Views\Shared\Welcome.cshtml" />
+    <Content Include="Views\Shared\_FooterSlim.cshtml" />
+    <Content Include="Views\FbGraph\SongInfo.cshtml" />
+    <Content Include="Views\Playlist\_Nav.cshtml" />
+    <Content Include="Views\Playlist\SongInfo.cshtml" />
+    <Content Include="Views\Playlist\VideoInfo.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Dror.Common\Dror.Common.csproj">
+      <Project>{7D9558AA-4609-4754-9C11-B9560D4061F0}</Project>
+      <Name>Dror.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Kululu.Entities\Kululu.Entities.csproj">
+      <Project>{3BD1D661-626E-49FA-AB55-3E2D4584195F}</Project>
+      <Name>Kululu.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Kululu.FBStreamHarvest\Kululu.FBStreamHarvest.csproj">
+      <Project>{30074DBC-4415-4D70-97A2-5AEE1BDB153A}</Project>
+      <Name>Kululu.FBStreamHarvest</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\kululu.Mappings\Kululu.Mappings.csproj">
+      <Project>{201E10F6-9258-4887-8F99-7A528E49FABE}</Project>
+      <Name>Kululu.Mappings</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\css\katom_oebold-webfont.eot" />
+    <Content Include="Content\css\katom_oebold-webfont.woff" />
+    <None Include="Content\css\dialogs.less" />
+    <None Include="Content\css\kululu.less" />
+    <None Include="Content\css\language\direction.less" />
+    <None Include="Content\css\language\ltr.less" />
+    <None Include="Content\css\language\rtl.less" />
+    <None Include="Content\css\leaderboard.less" />
+    <None Include="Content\css\playlist.less" />
+    <None Include="Content\css\settings-index.less" />
+    <Content Include="Content\css\timeline.css" />
+    <None Include="Content\css\wall.less" />
+    <None Include="Scripts\mbrevoort-jquery-facebook-multi-friend-selector-aad960a\README" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <None Include="T4MVC.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>T4MVC.cs</LastGenOutput>
+    </None>
+    <Content Include="Views\Playlist\_playlistInfo.cshtml" />
+    <Content Include="Views\Account\JoinUs.cshtml" />
+    <Content Include="Views\Settings\Create.cshtml" />
+    <Content Include="Views\Settings\Edit.cshtml" />
+    <Content Include="Views\Playlist\Playlist.cshtml" />
+    <Content Include="Views\Settings\_Settings.cshtml" />
+    <Content Include="Views\Shared\BrowserNotSupported.cshtml" />
+    <Content Include="Views\Mobile\PlaylistMobile.cshtml" />
+    <Content Include="Views\Settings\Index.cshtml" />
+    <Content Include="Views\Shared\ComeBackLater.cshtml" />
+    <Content Include="Views\Mobile\_PlaylistMobileTemplates.cshtml" />
+    <Content Include="Views\Mobile\_LayoutMobile.cshtml" />
+    <Content Include="Views\Settings\LocalBusinessInfo.cshtml" />
+    <Content Include="Views\LocalBusiness\TOS.cshtml" />
+    <Content Include="Views\Shared\_Globals.cshtml" />
+    <Content Include="Views\Playlist\_ChartView.cshtml" />
+    <Content Include="Views\Playlist\_Header.cshtml" />
+    <Content Include="Views\Playlist\_DialoguesTemplates.cshtml" />
+    <Content Include="Views\LocalBusiness\HarvestFacebook.cshtml" />
+    <Content Include="Views\Playlist\_Wall.cshtml" />
+    <Content Include="Views\Playlist\_Leaderboard.cshtml" />
+    <Content Include="Views\Playlist\_Player.cshtml" />
+    <Content Include="Views\Shared\_Footer.cshtml" />
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Test.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Shared\_LayoutZero.cshtml" />
+    <Content Include="Views\Shared\_LayoutMain.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_LocalResources\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="App_GlobalResources\Errors.he.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Errors.he.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App_GlobalResources\HarvesterStatus.he.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>HarvesterStatus.he.designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Playlist\Playlist.he.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Playlist.he.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Playlist\Playlist.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Playlist.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App_GlobalResources\Settings.he.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Settings.he.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App_GlobalResources\Settings.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App_GlobalResources\Strings.he.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Strings.he.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App_GlobalResources\Errors.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Errors.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App_GlobalResources\HarvesterStatus.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>HarvesterStatus.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App_GlobalResources\Strings.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Strings.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Shared\Shared.he.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Shared.he.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Shared\Shared.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Shared.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>False</AutoAssignPort>
+          <DevelopmentServerPort>61358</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>https://localhost:61358/kululu</IISUrl>
+          <OverrideIISAppRootUrl>True</OverrideIISAppRootUrl>
+          <IISAppRootUrl>https://localhost:61358/kululu</IISAppRootUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup>
+    <PreBuildEvent>$(SolutionDir)\dotless-v1.2.1.0\dotless.Compiler.exe $(ProjectDir)\Content\css\language\ltr.less
+$(SolutionDir)\dotless-v1.2.1.0\dotless.Compiler.exe $(ProjectDir)\Content\css\language\rtl.less
+
+set CSS_LIST=(chart.less guiders-1.1.2.less dialogs.less kululu.less leaderboard.less playlist.less settings-index.less wall.less welcome.less)
+
+rem *********** LTR compilation **********
+copy "$(ProjectDir)\Content\css\language\ltr.less" "$(ProjectDir)\Content\css\language\direction.less"
+for %25%25x in %25CSS_LIST%25 do $(SolutionDir)\dotless-v1.2.1.0\dotless.Compiler.exe $(ProjectDir)\Content\css\%25%25x $(ProjectDir)\Content\css\%25%25~nx_ltr.css
+
+rem *********** RTL compilation **********
+copy "$(ProjectDir)\Content\css\language\rtl.less" "$(ProjectDir)\Content\css\language\direction.less"
+for %25%25x in %25CSS_LIST%25 do $(SolutionDir)\dotless-v1.2.1.0\dotless.Compiler.exe $(ProjectDir)\Content\css\%25%25x $(ProjectDir)\Content\css\%25%25~nx_rtl.css
+
+$(MSBuildBinPath)\msbuild.exe $(ProjectDir)\minify.xml /target:js,css_ltr,css_rtl
+</PreBuildEvent>
+  </PropertyGroup>
+</Project>

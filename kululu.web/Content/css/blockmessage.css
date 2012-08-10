@@ -1,0 +1,47 @@
+﻿.blockOverlay{
+	position:absolute;
+	z-index:99;
+	top:0;
+	left:0;
+	display:none;
+    background: -moz-linear-gradient(top, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0.8) 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,0.8)), color-stop(100%,rgba(255,255,255,0.8))); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, rgba(255,255,255,0.8) 0%,rgba(255,255,255,0.8) 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, rgba(255,255,255,0.8) 0%,rgba(255,255,255,0.8) 100%); /* Opera11.10+ */
+    background: -ms-linear-gradient(top, rgba(255,255,255,0.8) 0%,rgba(255,255,255,0.8) 100%); /* IE10+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ccffffff', endColorstr='#ccffffff',GradientType=0 ); /* IE6-9 */
+    background: linear-gradient(top, rgba(255,255,255,0.8) 0%,rgba(255,255,255,0.8) 100%); /* W3C */
+}
+.blockContainer{
+	position:absolute;
+	z-index:99999999;
+	display:none;
+	padding: 10px;
+
+    /* Shadow */
+	box-shadow:0px 2px 5px #777;
+	-moz-box-shadow:0px 2px 5px #777;
+	-webkit-box-shadow:0px 2px 5px #777;
+    /* End shadow */	
+    
+    /* Rounded corners */
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    border-radius: 8px;
+    /* End rounded corners */
+
+    background: -moz-linear-gradient(top, rgba(82,82,82,0.7) 0%, rgba(82,82,82,0.7) 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(82,82,82,0.7)), color-stop(100%,rgba(82,82,82,0.7))); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, rgba(82,82,82,0.7) 0%,rgba(82,82,82,0.7) 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, rgba(82,82,82,0.7) 0%,rgba(82,82,82,0.7) 100%); /* Opera11.10+ */
+    background: -ms-linear-gradient(top, rgba(82,82,82,0.7) 0%,rgba(82,82,82,0.7) 100%); /* IE10+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b3525252', endColorstr='#b3525252',GradientType=0 ); /* IE6-9 */
+    background: linear-gradient(top, rgba(82,82,82,0.7) 0%,rgba(82,82,82,0.7) 100%); /* W3C */
+}
+.blockContent
+{
+    overflow-y: auto;
+    overflow-x: hidden;
+    max-height: 550px;
+    background-color: White;
+}

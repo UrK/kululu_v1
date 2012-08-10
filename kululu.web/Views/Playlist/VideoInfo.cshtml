@@ -1,0 +1,27 @@
+﻿@model string
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:og="http://ogp.me/ns#" xmlns:fb="https://www.facebook.com/2008/fbml">
+
+<head>
+    <title> Kululu video player </title>
+    <meta property="medium" content="video" />
+    <meta property="fb:app_id" content="@((System.Configuration.ConfigurationManager.GetSection("facebookSettings") as Facebook.FacebookConfigurationSection).AppId)" />
+    <meta property="og:title" content="Kululu" />
+    <meta property="description" content="Kululu - Social Video Player " />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content=@string.Format("{0}://{1}{2}/Playlist/GetVideoInfo/{3}", "https", Request.Headers["host"], Url.Content("~"), Model) />
+    <meta property="og:video" content=@string.Format("{0}://{1}{2}/flash/KululuPlayer.swf?videoId={3}&footerUrl={4}", "https", Request.Headers["host"], Url.Content("~"), Model, "https%3A//www.musicdeal.co.il%3Fvia%3DKululuVideoPR%26id%3D" + @Model) />
+    <meta property="og:video:type" content="application/x-shockwave-flash" />
+    <meta property="og:image" content=@string.Format("https://img.youtube.com/vi/{0}/0.jpg", Model) />
+    <meta property="og:site_name" content="Kululu" />
+    <meta property="og:video:width" content="398" />
+    <meta property="og:video:height" content="294" />
+</head>
+<body>
+<script type="text/javascript">window.top.location.href = "https://www.youtube.com/watch?v=@Model";</script>
+</body>
+</html>

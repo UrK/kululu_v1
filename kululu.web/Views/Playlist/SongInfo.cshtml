@@ -1,0 +1,37 @@
+﻿@model Kululu.Web.Models.SongWithUserRatingDTO
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:og="http://ogp.me/ns#"
+      xmlns:fb="https://www.facebook.com/2008/fbml">
+
+<head>
+    <title> Kululu video player </title>
+
+    <meta property="medium" content="video" />
+    <meta property="fb:app_id" content="@((System.Configuration.ConfigurationManager.GetSection("facebookSettings") as Facebook.FacebookConfigurationSection).AppId)" />
+    <meta property="og:title" content="@Model.SongName" />
+    <meta property="og:description" content="@Model.Description" />
+    <meta property="description" content="Kululu - Social Video Player " />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content=@string.Format("{0}://{1}{2}/Playlist/GetSongInfo/{3}", "https", Request.Headers["host"], Url.Content("~"), Model.RatingId) />
+    <meta property="og:video" content=@string.Format("{0}://{1}{2}/flash/KululuPlayer.swf?videoId={3}&footerUrl={4}", "https", Request.Headers["host"], Url.Content("~"), Model.SongVideoID, "https%3A//www.musicdeal.co.il%3Fvia%3DKululuVideoPR%26id%3D" + @Model.SongVideoID) />
+
+    <meta property="og:video:type" content="application/x-shockwave-flash" />
+    <meta property="og:image" content="https://img.youtube.com/vi/@Model.SongVideoID/0.jpg" />
+    <meta property="og:site_name" content="Kululu" />
+    <meta property="og:video:width" content="398" />
+    <meta property="og:video:height" content="294" />
+    @*<meta property="og:video:height" content="398" />*@
+</head>
+
+<body>
+
+
+</body>
+
+</html>

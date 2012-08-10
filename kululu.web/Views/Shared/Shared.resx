@@ -1,0 +1,270 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="aDayAgo" xml:space="preserve">
+    <value>a day ago</value>
+  </data>
+  <data name="adminNoLimit" xml:space="preserve">
+    <value>As playlist admin, you can add as many songs as you want.</value>
+  </data>
+  <data name="ago" xml:space="preserve">
+    <value>ago</value>
+  </data>
+  <data name="aMinuteAgo" xml:space="preserve">
+    <value>a minute ago</value>
+  </data>
+  <data name="anHoursAgo" xml:space="preserve">
+    <value>an hour ago</value>
+  </data>
+  <data name="aSecondAgo" xml:space="preserve">
+    <value>a second ago</value>
+  </data>
+  <data name="aYearAgo" xml:space="preserve">
+    <value>a year ago</value>
+  </data>
+  <data name="close" xml:space="preserve">
+    <value>Close</value>
+  </data>
+  <data name="createSongDefaultDescription" xml:space="preserve">
+    <value>Kululu! So many songs I like!</value>
+  </data>
+  <data name="createSongDefaultMessage" xml:space="preserve">
+    <value>Kululu! I just add a new song to this playlist :</value>
+  </data>
+  <data name="days" xml:space="preserve">
+    <value>days</value>
+  </data>
+  <data name="didntVoteFor" xml:space="preserve">
+    <value>You have {0} new songs.</value>
+  </data>
+  <data name="errorPlayingSong" xml:space="preserve">
+    <value>Oops. An error has occured. Cannot play song.</value>
+  </data>
+  <data name="femaleLiked" xml:space="preserve">
+    <value>Liked</value>
+  </data>
+  <data name="femaleNotLiked" xml:space="preserve">
+    <value>Didn't Like</value>
+  </data>
+  <data name="guideBuckleUp" xml:space="preserve">
+    <value>&lt;h2&gt;Thanks for joining Kululu&lt;/h2&gt;&lt;p&gt;Buckle up and hold on! We start&lt;/p&gt;</value>
+  </data>
+  <data name="guideButtonCancel" xml:space="preserve">
+    <value>I don't like fun (cancel)</value>
+  </data>
+  <data name="guideButtonGo" xml:space="preserve">
+    <value>Let's start!</value>
+  </data>
+  <data name="guideFirstStage" xml:space="preserve">
+    <value>&lt;p&gt;First step - let's connect.&lt;br/&gt;That's how you select songs, rate and influence.&lt;/p&gt;</value>
+  </data>
+  <data name="guideLetsStart" xml:space="preserve">
+    <value>Let's start!</value>
+  </data>
+  <data name="guideTitle" xml:space="preserve">
+    <value>Kululu!</value>
+  </data>
+  <data name="guideTutorialLetsStart" xml:space="preserve">
+    <value>Let's start</value>
+  </data>
+  <data name="guideTutorialNext" xml:space="preserve">
+    <value>Got it. What's next?</value>
+  </data>
+  <data name="guideTutorialNext2" xml:space="preserve">
+    <value>Ok. What's next?</value>
+  </data>
+  <data name="guideTutorialStep1" xml:space="preserve">
+    <value>&lt;h2&gt;How do you search or add a song?&lt;/h2&gt;&lt;p&gt;Just start typing as in Google. While you type Kululu looks up songs and shows you the results below.&lt;br/&gt;Now, just click the &amp;quot;Add/Like&amp;quot; button&lt;/p&gt;</value>
+  </data>
+  <data name="guideTutorialStep2" xml:space="preserve">
+    <value>&lt;h2&gt;Your points&lt;/h2&gt;&lt;p&gt;In Kululu you earn points. You get it for every action you take, like voting, adding songs and other things that you will have to discover yourself.&lt;br/&gt;You can show off with those points, or ask from the page owner to get you sime prize.&lt;/p&gt;</value>
+  </data>
+  <data name="guideTutorialStep3" xml:space="preserve">
+    <value>&lt;h2&gt;New songs&lt;/h2&gt;&lt;p&gt;Here you can see how many songs you have not voted for yet.&lt;/p&gt;</value>
+  </data>
+  <data name="guideTutorialStop" xml:space="preserve">
+    <value>I am fine</value>
+  </data>
+  <data name="guideWelcome" xml:space="preserve">
+    <value>&lt;p class='quote'&gt;So many songs, so little time! You just have to select with me.&lt;/p&gt;&lt;p&gt;Kululu is a social and fun way of selecting songs.&lt;/p&gt;&lt;p class='last'&gt;All you have to do is to add songs that you love to the playlist and start voting.&lt;/p&gt;</value>
+  </data>
+  <data name="hours" xml:space="preserve">
+    <value>hours</value>
+  </data>
+  <data name="loading" xml:space="preserve">
+    <value>Loading...</value>
+  </data>
+  <data name="maleLiked" xml:space="preserve">
+    <value>liked</value>
+  </data>
+  <data name="maleNotLiked" xml:space="preserve">
+    <value>didn't like</value>
+  </data>
+  <data name="minutes" xml:space="preserve">
+    <value>minutes</value>
+  </data>
+  <data name="newSongs" xml:space="preserve">
+    <value>You have one new song.</value>
+  </data>
+  <data name="noNewSongs" xml:space="preserve">
+    <value>No new songs.</value>
+  </data>
+  <data name="ratings" xml:space="preserve">
+    <value>votes</value>
+  </data>
+  <data name="seconds" xml:space="preserve">
+    <value>seconds</value>
+  </data>
+  <data name="settingIndex_cannotRemoveYourself" xml:space="preserve">
+    <value>You cannot remove yourself as admin</value>
+  </data>
+  <data name="settingIndex_errorWhenAddingUser" xml:space="preserve">
+    <value>There was an error with adding the users</value>
+  </data>
+  <data name="settingIndex_harvestInit" xml:space="preserve">
+    <value>Initializing</value>
+  </data>
+  <data name="settingIndex_settingsNotSaved" xml:space="preserve">
+    <value>An error has occured! Your settings weren't saved.</value>
+  </data>
+  <data name="settingIndex_settingsSaved" xml:space="preserve">
+    <value>Thank you, all settings have been saved.</value>
+  </data>
+  <data name="settingIndex_userNotAdminContent" xml:space="preserve">
+    <value>*This user is not an admin of the page</value>
+  </data>
+  <data name="settingIndex_userNotAdminTitle" xml:space="preserve">
+    <value>This user cannot perform actions that demand him to be the page owner.</value>
+  </data>
+  <data name="votingEnded" xml:space="preserve">
+    <value>Voting ended. Cannot add new songs</value>
+  </data>
+  <data name="votingLimit" xml:space="preserve">
+    <value>Well done! You've added all your allowed songs for today.</value>
+  </data>
+  <data name="votingRemaining" xml:space="preserve">
+    <value>You still have {0} songs to add</value>
+  </data>
+  <data name="votingWillEndIn" xml:space="preserve">
+    <value>Voting will end in</value>
+  </data>
+  <data name="years" xml:space="preserve">
+    <value>years</value>
+  </data>
+</root>

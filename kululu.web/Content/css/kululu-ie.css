@@ -1,0 +1,10 @@
+﻿/*fallback CSS hacks for IE8*/
+.inputWrapper
+{
+    border: solid 1px #cccccc;
+}
+.ui-focus
+{
+    border: solid 1px #387bbe !important;
+    background-color: #f7fbff !important;
+}

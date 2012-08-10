@@ -1,0 +1,127 @@
+﻿@import "language\direction.less";
+
+#Wall 
+{
+    background-color: White;
+    padding: 20px 0;
+    display: none;
+}
+ul.wall {
+}
+
+ul.wall li 
+{
+    padding: 10px 0px 15px 0px;
+	.languagePadding(50px);
+	.oppositeLanguagePadding(0px);
+    border-top: solid 1px #f0f0f0;
+}
+ul.wall li:first-child
+{
+    border-top: 0px;
+}
+
+
+ul.wall .media 
+{
+    width: 50px;
+    float: @languageFloat;
+	.languageMargin(-50px);
+}
+ul.wall .media img 
+{
+    width: 50px;
+    height: 50px;
+}
+ul.wall .bd 
+{
+    width: 100%;
+}
+ul.wall .bd .wrapper 
+{
+	.languagePadding(10px);
+}
+ul.wall .user 
+{
+    font-weight: bold;
+    color: #3a77d7;
+}
+ul.wall .message 
+{
+    margin-top: 5px;
+    color: Black;
+    line-height:1.5em;
+}
+div.attachment 
+{
+    padding: 10px 0px 0 0;
+	.languagePadding(120px);
+}
+div.attachment div.media
+{
+    width: 120px;
+    float: @languageFloat;
+	.languageMargin(-120px);
+}
+div.attachment div.media img
+{
+    width: 120px;
+    height: 90px;
+}
+div.attachment .bd
+{
+    width: 100%;
+}
+div.attachment .bd .wrapper 
+{
+    padding-right: 10px;
+}
+div.attachment .link 
+{
+    margin-top: 2px;
+    margin-bottom: 3px;
+    font-weight: bold;
+}
+div.attachment .description
+{
+    margin-top: 10px;
+    color: #777777;
+    line-height: 1.2em;
+} 
+ul.wall .footer 
+{
+    clear: both;
+    margin-top:10px;
+}
+ul.wall .footer .Timeago 
+{
+    color: #999;
+}
+.showMore
+{
+    display: none;
+    height: 35px;
+    line-height: 35px;
+    border: solid 1px #D7DBE5;
+    background-color: #EDEFF4;
+    margin: 10px 0;
+}
+.showMore a
+{
+    display: block;
+    width: 100%;
+    height: 35px;
+    line-height: 35px;
+    text-align:center;
+    vertical-align: middle;
+}
+.showMore a:hover
+{
+    background-color: #D7DBE5;
+}
+.showMore img
+{
+    padding: 11px 0;
+    display: block;
+    margin: 0 auto;
+}

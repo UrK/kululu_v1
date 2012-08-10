@@ -1,0 +1,220 @@
+﻿@import "language\direction.less";
+
+/**************************************************/
+/**************************************************/
+h2.love img, h2.hate img
+{
+    background-image: url(../img/votes_sprites.png);
+    width: 15px;
+    height: 15px;
+    vertical-align: -4px;
+}
+h2.love img 
+{
+    background-position: 0px -15px;
+}
+h2.hate img
+{
+    background-position: -15px -15px;    
+}
+
+ul.votes
+{
+    display: block;
+    clear:both;
+}
+ul.votes li
+{
+    float: @languageFloat;
+    padding: 5px 0;
+    color: #555555;
+    .oppositeLanguageMargin(3px);
+}
+ul.votes li a.img
+{
+}
+ul.votes li a.img:hover
+{
+    text-decoration: none !important;
+}
+ul.votes li .img img
+{
+    width: 50px;
+    height: 50px;
+}
+/**************************************************/
+/**************************************************/
+.postMessage 
+{
+    width: 400px !important;
+}
+.postMessage .media
+{
+    margin: 15px 0;
+	.languagePadding(130px);
+}
+.postMessage .media img 
+{
+    width: 120px;
+    height: 90px;
+	.languageMargin(-130px);
+    display: block;
+    float: @languageFloat;
+}
+.postMessage .media .bd 
+{
+    width: 100%;
+    float: @languageFloat;
+}
+.postMessage .media .bd .link
+{
+    margin-top: 2px;
+    display:block;
+    clear: both;
+}
+.postMessage .media .bd .link a
+{
+    font-weight: bold;
+    line-height: 1.1em;
+}
+.postMessage .media .bd div.caption
+{
+    display: block;
+    clear: both;
+    margin-top: 3px;
+    color: #777;
+}
+.postMessage .media .bd div.description
+{
+    display:block;
+    clear: both; 
+    margin-top: 7px;
+    color: #808080;
+    cursor: pointer;
+}
+.postMessage div.description .inputWrapper
+{
+    display: none;
+    height: 30px;
+}
+.postMessage div.description .inputWrapper textarea
+{
+    height: 30px;
+}
+.postMessage div.description:hover span
+{
+    background-color: #e1eaf9;
+}
+.postMessage .link a:hover
+{
+    background-color: #e1eaf9;
+    text-decoration: none !important;
+}
+.postMessage .link .inputWrapper 
+{
+    display:none;
+}
+.postMessage .link .inputWrapper input 
+{
+    text-align: right;
+}
+
+.notice
+{
+    color:#DB2017;
+    font-size:10px;
+    margin-bottom: 20px;
+}
+/**************************************************/
+/**************************************************/
+.editSongDetails .media
+{
+    padding: 0 0px 0 0;
+	.languagePadding(90px);
+    position: relative;
+}
+.editSongDetails .img
+{
+    margin-top: 15px;
+	.languageMargin(-90px);
+    width: 90px;
+    height: 80px;
+    float: @languageFloat;
+    cursor: default;
+}
+.pointer 
+{
+    cursor: pointer !important;
+}
+.editSongDetails .img a.btnChangeImage 
+{
+    display: none;
+    position: absolute;
+    .language(0px);
+    top: 15px;
+    font-size: 10px;
+    padding: 2px;
+    color: White;
+    background-color: rgba(0,0,0,0.5);
+}
+.editSongDetails .img img
+{
+    width: 80px;
+    height: 80px;
+}
+.editSongDetails .bd 
+{
+    float: @languageFloat;
+    width: 100%;
+}
+/**************************************************/
+/**************************************************/
+ul.comments
+{
+}
+ul.comments li 
+{
+    display: block;
+    padding: 5px 0px 5px 0px;
+	.languagePadding(40px);
+	.oppositeLanguagePadding(5px);
+    margin: 2px 0;
+    background-color: #EDEFF4;
+}
+ul.comments li .img 
+{
+    float: @languageFloat;
+	.languageMargin(-40px);
+    width: 35px;
+	.languagePadding(5px);
+}
+ul.comments li .img img 
+{
+    width: 30px;
+    height: 30px;
+}
+ul.comments li .bd 
+{
+    width: 100%;
+    line-height: 1.2em;
+}
+ul.comments li .bd a.from
+{
+    float: @languageFloat;
+    font-weight: bold;
+	.oppositeLanguageMargin(3px);
+}
+ul.comments li .bd .footer 
+{
+    padding-top: 3px;
+    color: Gray;
+}
+ul.comments li.new textarea
+{
+    width: 100%;
+    resize:none;
+    font-size: 11px;
+    height: 22px;
+    padding: 3px;
+    border: solid 1px #C0D1EC;
+}

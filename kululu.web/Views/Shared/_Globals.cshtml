@@ -1,0 +1,55 @@
+﻿@using Resources = Kululu.Web.App_GlobalResources
+@model Kululu.Web.Models.PageInfoDTO
+           
+<script type="text/javascript">
+    if (typeof (Globals) == 'undefined') {
+        Globals = [];
+    }
+    $.extend(Globals, {
+        playlistSettings: {
+            playlistID: @Model.DefaultPlaylist.Id,
+            playlistName: "@Model.DefaultPlaylist.Name",
+            nextPlayDate: "@Model.DefaultPlaylist.NextPlayDateBinary",
+            NumberOfVotes: @Model.DefaultPlaylist.NumberOfVotes,
+            NumberOfSongs: @Model.DefaultPlaylist.NumberOfSongs,
+            NumOfSongsLimit: @Model.DefaultPlaylist.NumOfSongsLimit,
+            timeStamp: "@Model.DefaultPlaylist.TimeStampBinary",
+            playlistActive: true //is playlist active - before deadline
+        },
+        localBusiness: {
+            Id: @Model.Id,
+            fanPageId: @Model.FanPageId, //TODO: change to take from localbiz
+            isUserPostRequired: "@Model.PublishUserContentToWall" == 'True',
+            isAdminPostRequired: "@Model.PublishAdminContentToWall" == 'True'
+        },
+        User: {
+            FBID: @Model.User.FBID,
+            IsPageAdmin: "@Model.User.IsPageAdmin" == 'True',
+            name: "@Model.User.name",
+            numOfSongsLeft: @Model.User.numOfSongsLeft,
+            numOfVotes: @Model.User.numOfVotes,
+            role: "@Model.User.role",
+            score: @Model.User.score,
+            summedScore: @Model.User.summedScore,
+            HasLikedPage: "@Model.User.HasLikedPage" == 'True',
+            isConnected : "@Model.User.IsConnected" == 'True'
+        },
+        Strings: {
+            @if (Model != null && Model.Strings != null) {
+                foreach (var en in Model.Strings) {
+                    @: @en.Key: "@en.Value",
+                }
+            }
+            
+            _dummyObject : "woot"
+        },
+        IsRtl: "@Model.IsRightToLeft" == 'True',
+        RtlMirrior : "@Model.IsRightToLeft" == 'True' ? 1 : -1,
+        referringPlaylisingSongRating: @Model.ReferringPlaylisingSongRating,
+        hfAppPath: '@(Url.Content("~") == "/" ? "" : Url.Content("~"))',
+        appId: '@((System.Configuration.ConfigurationManager.GetSection("facebookSettings") as Facebook.FacebookConfigurationSection).AppId)',
+        isInIFrame: (window.location != window.parent.location) ? true : false
+    });
+
+</script>
+

@@ -1,0 +1,24 @@
+﻿@model dynamic
+@{
+    ViewBag.Title = "Like Us!";
+    Layout = MVC.Shared.Views._LayoutZero;
+}
+<h1>Test user:</h1>
+<table style="padding: 5px;"><tbody style="padding: 5px;">
+@foreach (var val in Model)
+{
+    <tr style="padding: 5px;">
+    <td style="padding: 5px;">@val.Key</td>
+    <td style="padding: 5px;">
+    @if (val.Key.ToString().Equals("login_url"))
+    {
+        <a href="@val.Value">@val.Value</a>
+    }
+    else
+    {
+        @val.Value
+    }
+    </td>
+    </tr>
+}
+</tbody></table>

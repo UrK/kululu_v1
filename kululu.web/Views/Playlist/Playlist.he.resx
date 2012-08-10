@@ -1,0 +1,342 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AddSong" xml:space="preserve">
+    <value>הוסף שיר</value>
+  </data>
+  <data name="cancel" xml:space="preserve">
+    <value>בטל</value>
+  </data>
+  <data name="CancelAddSong" xml:space="preserve">
+    <value>בטל הוספה</value>
+  </data>
+  <data name="clickToViewPostInFB" xml:space="preserve">
+    <value>לחץ לצפיית הפוסט בפייסבוק</value>
+  </data>
+  <data name="DialogComments_likes" xml:space="preserve">
+    <value>לייקים</value>
+  </data>
+  <data name="DialogComments_YourOpinion" xml:space="preserve">
+    <value>מה דעתך?</value>
+  </data>
+  <data name="DialogFeedbackThanks_Content" xml:space="preserve">
+    <value>אנחנו מודים לך</value>
+  </data>
+  <data name="DialogFeedbackThanks_Title" xml:space="preserve">
+    <value>תודה רבה!</value>
+  </data>
+  <data name="DialogFeedback_AnotherTime" xml:space="preserve">
+    <value>פעם אחרת</value>
+  </data>
+  <data name="DialogFeedback_Content" xml:space="preserve">
+    <value>אני אוהב את קולולו.</value>
+  </data>
+  <data name="DialogFeedback_Send" xml:space="preserve">
+    <value>שלח</value>
+  </data>
+  <data name="DialogFeedback_Subtitle" xml:space="preserve">
+    <value>זה הזמן לשבח את קולולו או לספר לנו על מה שמציק לך. נשמח לקבל כל תגובה.</value>
+  </data>
+  <data name="DialogFeedback_Title" xml:space="preserve">
+    <value>קולולו - מה דעתכם?</value>
+  </data>
+  <data name="DialogueTemplateDeleteSong_Title" xml:space="preserve">
+    <value>האם אתה בטוח רוצה למחוק את השיר?</value>
+  </data>
+  <data name="DialogueTemplateEditSong_SwitchPicture" xml:space="preserve">
+    <value>החלף תמונה</value>
+  </data>
+  <data name="DialogueTemplateEditSong_Title" xml:space="preserve">
+    <value>עריכת שיר</value>
+  </data>
+  <data name="DialogueTemplatePostError_duplicateEntry" xml:space="preserve">
+    <value>מישהו כבר הוסיף את השיר הזה לפלייליסט. אולי הוא למעלה ולא שמת לב?</value>
+  </data>
+  <data name="DialogueTemplatePost_ClickToEdit" xml:space="preserve">
+    <value>לחץ לעריכה</value>
+  </data>
+  <data name="DialogueTemplatePost_Content" xml:space="preserve">
+    <value>קולולו! הוספתי שיר חדש לפלייליסט של</value>
+  </data>
+  <data name="DialogueTemplatePost_Description" xml:space="preserve">
+    <value>קולולו! כל כך הרבה שירים, כל כך מעט מקום</value>
+  </data>
+  <data name="DialogueTemplatePost_SubTitle" xml:space="preserve">
+    <value>ההודעה הזו תתפרסם על הקיר של הקבוצה (לא שלך). עכשיו בוא נערוך אותה.</value>
+  </data>
+  <data name="DialogueTemplatePost_Title" xml:space="preserve">
+    <value>הוספת שיר חדש</value>
+  </data>
+  <data name="DialogueTemplateSongLimit_Content" xml:space="preserve">
+    <value>ישר כח על הפעילות אבל עברת את המכסה המותרת.</value>
+  </data>
+  <data name="DialogueTemplateSongLimit_Title" xml:space="preserve">
+    <value>היי, תשאיר קצת לאחרים :)</value>
+  </data>
+  <data name="disliked" xml:space="preserve">
+    <value>לא אוהב</value>
+  </data>
+  <data name="highVoters" xml:space="preserve">
+    <value>מצעד המדרגים</value>
+  </data>
+  <data name="leadingSongs" xml:space="preserve">
+    <value>שירים מובילים</value>
+  </data>
+  <data name="liked" xml:space="preserve">
+    <value>אוהב</value>
+  </data>
+  <data name="myScore" xml:space="preserve">
+    <value>הניקוד שלי</value>
+  </data>
+  <data name="nextSong" xml:space="preserve">
+    <value>שיר הבא</value>
+  </data>
+  <data name="play" xml:space="preserve">
+    <value>נגן</value>
+  </data>
+  <data name="save" xml:space="preserve">
+    <value>שמור</value>
+  </data>
+  <data name="searchDefaultValueLookupSongs" xml:space="preserve">
+    <value>חפש שירים...</value>
+  </data>
+  <data name="searchDefaultValueTitle" xml:space="preserve">
+    <value>הוסף או חפש שירים</value>
+  </data>
+  <data name="searchDefaultValueWantToHear" xml:space="preserve">
+    <value>בא לי לשמוע...</value>
+  </data>
+  <data name="showVotes" xml:space="preserve">
+    <value>הצג מי אהב ומי לא אהב את השיר</value>
+  </data>
+  <data name="songs" xml:space="preserve">
+    <value>שירים</value>
+  </data>
+  <data name="start" xml:space="preserve">
+    <value>התחל</value>
+  </data>
+  <data name="stop" xml:space="preserve">
+    <value>עצור</value>
+  </data>
+  <data name="templateConnect_Cancel" xml:space="preserve">
+    <value>אני שונא כיף! (לא עכשיו)</value>
+  </data>
+  <data name="templateConnect_Connect" xml:space="preserve">
+    <value>כדי להתחיל להשתמש באפליקציה, יש להתחבר</value>
+  </data>
+  <data name="templateConnect_Login" xml:space="preserve">
+    <value>אני ♥ קולולו! (התחבר)</value>
+  </data>
+  <data name="templateConnect_Title" xml:space="preserve">
+    <value>הצטרפות לקולולו</value>
+  </data>
+  <data name="TemplateSynchronizePreDialogue_Title" xml:space="preserve">
+    <value>ייבוא שירים</value>
+  </data>
+  <data name="templateVotesDialogue_HateTheSong" xml:space="preserve">
+    <value>יכולים בלעדיו</value>
+  </data>
+  <data name="templateVotesDialogue_LoveTheSong" xml:space="preserve">
+    <value>מתים על השיר</value>
+  </data>
+  <data name="votes" xml:space="preserve">
+    <value>הצבעות</value>
+  </data>
+  <data name="yourScore" xml:space="preserve">
+    <value>הניקוד שלך</value>
+  </data>
+  <data name="leaveFeedback" xml:space="preserve">
+    <value>השאר פידבק</value>
+  </data>
+  <data name="DialogueTemplateDeleteSong_DeleteSong" xml:space="preserve">
+    <value>מחק שיר</value>
+  </data>
+  <data name="DialogueTemplateDeleteSong_Subtitle" xml:space="preserve">
+    <value>פעולה זו גם תמחוק את ההודעה מהקיר של פייסבוק.</value>
+  </data>
+  <data name="DialogueTemplateEditSong_ArtistName" xml:space="preserve">
+    <value>שם האמן</value>
+  </data>
+  <data name="DialogueTemplateEditSong_SongName" xml:space="preserve">
+    <value>שם השיר</value>
+  </data>
+  <data name="share" xml:space="preserve">
+    <value>שתף</value>
+  </data>
+  <data name="TemplateHarvestPreDialogue_Content" xml:space="preserve">
+    <value>שים לב, פעולה זו יכולה לארוך מספר דקות</value>
+  </data>
+  <data name="TemplateHarvestPreDialogue_Period" xml:space="preserve">
+    <value>בחר תקופה</value>
+  </data>
+  <data name="TemplateHarvestPreDialogue_Title" xml:space="preserve">
+    <value>ייבוא שירים</value>
+  </data>
+  <data name="backToPlaylist" xml:space="preserve">
+    <value>בחזרה לפלייליסט</value>
+  </data>
+  <data name="deleteSong" xml:space="preserve">
+    <value>מחק</value>
+  </data>
+  <data name="didYouNotLike" xml:space="preserve">
+    <value>לא אהבת?</value>
+  </data>
+  <data name="doYouNotLlike" xml:space="preserve">
+    <value>לא אוהב?</value>
+  </data>
+  <data name="edit" xml:space="preserve">
+    <value>ערוך</value>
+  </data>
+  <data name="editTitle" xml:space="preserve">
+    <value>ערוך את שם השיר</value>
+  </data>
+  <data name="iLiked" xml:space="preserve">
+    <value>אהבתי</value>
+  </data>
+  <data name="likes" xml:space="preserve">
+    <value>אהב</value>
+  </data>
+  <data name="showMore" xml:space="preserve">
+    <value>הצג עוד</value>
+  </data>
+  <data name="newSongsTab" xml:space="preserve">
+    <value>שירים חדשים</value>
+  </data>
+  <data name="leaderboard" xml:space="preserve">
+    <value>לוח ניקוד</value>
+  </data>
+  <data name="playlists" xml:space="preserve">
+    <value>פלייליסטים</value>
+  </data>
+  <data name="wall" xml:space="preserve">
+    <value>קיר</value>
+  </data>
+  <data name="musicWeLike" xml:space="preserve">
+    <value>מוסיקה שאוהבים</value>
+  </data>
+  <data name="DialogDefaultCancel" xml:space="preserve">
+    <value>סגור</value>
+  </data>
+  <data name="InstallMe" xml:space="preserve">
+    <value>ביכולתך להוסיף את האפליקציה לעמוד שלך תוך מספר שניות.</value>
+  </data>
+  <data name="InstallMeButton" xml:space="preserve">
+    <value>הוסף לעמוד שלי</value>
+  </data>
+</root>

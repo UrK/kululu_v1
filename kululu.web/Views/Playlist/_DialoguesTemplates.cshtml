@@ -1,0 +1,308 @@
+﻿<script type="text/x-jqote-template" id="templateConnect"><![CDATA[
+    <div class="dialogue">
+        <h1> @Kululu.Web.Views.Playlist.Playlist.templateConnect_Title </h1>
+        <p>  @Kululu.Web.Views.Playlist.Playlist.templateConnect_Connect  </p>
+        <div class="actions">
+            <a class="ui-btnSubmit">
+                @Kululu.Web.Views.Playlist.Playlist.templateConnect_Login
+            </a>
+            <a class="ui-btnCancel">
+                @Kululu.Web.Views.Playlist.Playlist.templateConnect_Cancel
+            </a>
+        </div>
+    </div>
+]]></script>
+<script type="text/x-jqote-template" id="DialogComments"><![CDATA[
+    <div class="dialogue">
+        <ul class="comments">
+            <* $(this.comments).each(function(){ *>
+            <li class="group" data-id="<*=this.id*>">
+                <div class="img">
+                    <a href="https://www.facebook.com/profile.php?id=<*=this.from.id*>" target="_blank">
+                        <img src="https://graph.facebook.com/<*=this.from.id*>/picture"/>
+                    </a>
+                </div>
+                <div class="bd">
+                    <a href="https://www.facebook.com/profile.php?id=<*=this.from.id*>" class="from" target="_blank">
+                        <*=this.from.name*>
+                    </a>
+                    <span class="message"><*=this.message*></span>
+                    <div class="footer">
+                        <abbr class="timeago"><*=this.created_time*></abbr>
+                        <* if (typeof(this.likes) != 'undefined') { *>
+                        <a><*=this.likes*> @Kululu.Web.Views.Playlist.Playlist.DialogComments_likes </a>
+                        <* }; *>
+                    </div>
+                </div>
+            </li>
+            <* }); *>
+            <li class="new group">
+                <div class="img">
+                    <a href="https://www.facebook.com/profile.php?id=<*=Globals.User.FBID*>" target="_blank">
+                        <img src="https://graph.facebook.com/<*=Globals.User.FBID*>/picture"/>
+                    </a>
+                </div>
+                <div class="bd">
+                    <textarea class="elastic defaultInput" data-postid="<*=this.postid*>">@Kululu.Web.Views.Playlist.Playlist.DialogComments_YourOpinion</textarea>
+                </div>
+            </li>
+        </ul>
+        <div class="actions">
+            <a class="ui-btnCancel">סגור</a>
+        </div>
+    </div>
+]]></script>
+<script type="text/x-jqote-template" id="DialogFeedback"><![CDATA[
+    <div class="dialogue">
+        <h2>@Kululu.Web.Views.Playlist.Playlist.DialogFeedback_Title</h2>
+        <p> @Kululu.Web.Views.Playlist.Playlist.DialogFeedback_Subtitle</p>
+        <div class="inputWrapper">
+            <textarea id="comment" name="comment" class="" spellcheck="false" tabindex="0" rows="10" cols="50">@Kululu.Web.Views.Playlist.Playlist.DialogFeedback_Content</textarea>
+        </div>
+        <div class="actions">
+            <a class="ui-btnSubmit" tabindex="0" id="sendFeedback" href="javascript:void(0);">@Kululu.Web.Views.Playlist.Playlist.DialogFeedback_Send</a>
+            <a class="ui-btnCancel" tabindex="0" >@Kululu.Web.Views.Playlist.Playlist.DialogFeedback_AnotherTime</a>
+        </div>
+    </div>
+]]></script>
+
+<script type="text/x-jqote-template" id="DialogFeedbackThanks"><![CDATA[
+    <div class="dialogue feedback">
+        <h1>@Kululu.Web.Views.Playlist.Playlist.DialogFeedbackThanks_Title</h1>
+        <p> @Kululu.Web.Views.Playlist.Playlist.DialogFeedbackThanks_Content</p>
+        <div class="actions">
+            <a class="ui-btnCancel">@Kululu.Web.Views.Shared.Shared.close</a>
+        </div>
+    </div>
+]]></script>
+<script type="text/x-jqote-template" id="templateDialogue"><![CDATA[
+    <div class="dialogue">
+        <h2>@Kululu.Web.Views.Shared.Shared.loading</h2>
+        <img src="@Url.Content("~/Content/img/ajax-loader2.gif")" title="@Kululu.Web.App_GlobalResources.Strings.loadingTitle"/>
+    </div>
+]]></script>
+<script type="text/x-jqote-template" id="templateDialogDefault"><![CDATA[
+    <div class="dialogue">
+        <p><*=this.message*></p>
+        <div class="actions clearfix">
+            <a class="ui-btnCancel">@Kululu.Web.Views.Playlist.Playlist.DialogDefaultCancel</a>
+        </div>
+    </div>
+]]></script>
+
+<script type="text/x-jqote-template" id="DialogueTemplate_SongLimit"><![CDATA[
+    <div class="dialogue">
+        <h1>@Kululu.Web.Views.Playlist.Playlist.DialogueTemplateSongLimit_Title</h1>
+        <p>
+            @Kululu.Web.Views.Playlist.Playlist.DialogueTemplateSongLimit_Content
+        </p>
+        <div class="actions">
+            <a class="ui-btnCancel">@Kululu.Web.Views.Shared.Shared.close</a>
+        </div>
+    </div>
+]]></script>
+<script type="text/x-jqote-template" id="templateSynchronizePreDialogue"><![CDATA[
+    <div class="dialogue">
+        <h2>@Kululu.Web.Views.Playlist.Playlist.TemplateSynchronizePreDialogue_Title</h2>
+        <p> @Kululu.Web.Views.Playlist.Playlist.TemplateHarvestPreDialogue_Content</p>
+        <label>@Kululu.Web.Views.Playlist.Playlist.TemplateHarvestPreDialogue_Period</label>
+        <select id="importType" name="importType">
+            <option value="0">@Kululu.Web.App_GlobalResources.Strings.fromYesterday</option>
+            <option value="1">@Kululu.Web.App_GlobalResources.Strings.fromWeekAgo</option>
+            <option value="2">@Kululu.Web.App_GlobalResources.Strings.FromAlways</option>
+        </select>
+        <div class="actions clearfix">
+            <a class="ui-btnSubmit">@Kululu.Web.Views.Playlist.Playlist.start</a>
+            <a class="ui-btnCancel">@Kululu.Web.Views.Playlist.Playlist.cancel</a>
+        </div>
+    </div>
+]]></script>
+<script type="text/x-jqote-template" id="templateHarvestPreDialogue"><![CDATA[
+    <div class="dialogue">
+        <h2>@Kululu.Web.Views.Playlist.Playlist.TemplateHarvestPreDialogue_Title</h2>
+        <p> @Kululu.Web.Views.Playlist.Playlist.TemplateHarvestPreDialogue_Content</p>
+        <label>@Kululu.Web.Views.Playlist.Playlist.TemplateHarvestPreDialogue_Period</label>
+        <select id="importType" name="importType">
+            <option value="0">@Kululu.Web.App_GlobalResources.Strings.fromYesterday</option>
+            <option value="1">@Kululu.Web.App_GlobalResources.Strings.fromWeekAgo</option>
+            <option value="2">@Kululu.Web.App_GlobalResources.Strings.FromAlways</option>
+        </select>
+        <div class="actions clearfix">
+            <a class="ui-btnSubmit">@Kululu.Web.Views.Playlist.Playlist.start</a>
+            <a class="ui-btnCancel">@Kululu.Web.Views.Playlist.Playlist.cancel</a>
+        </div>
+    </div>
+]]></script>
+<script type="text/x-jqote-template" id="templateHarvestDialogue"><![CDATA[
+    <div class="dialogue">
+        <h2>@Kululu.Web.Views.Playlist.Playlist.TemplateHarvestPreDialogue_Title</h2>
+
+        <span class="import-title"> <*= this.importTitle *> </span> 
+        
+        <span class="<* if (!this.likeImportPerformed) { *>hidden" <* } else { *>" <*}; *>>
+            <span class="import-likesComplete"> <*= this.importLikesComplete*>  / <*= this.importLikesTotal *>  </span>
+        </span>
+
+        <div class="<* if (this.complete) { *>hidden" <* } else { *>" <*}; *>>
+            <img src="@Url.Content("~/Content/img/ajax-loader2.gif")" title="@Kululu.Web.App_GlobalResources.Strings.loadingTitle"/>
+        </div>
+
+        <div class="actions" >
+            <* if (this.complete) { *>
+            <a class="ui-btnCancel">@Kululu.Web.Views.Shared.Shared.close</a>
+            <* } *>
+        </div>
+    </div>
+]]></script>
+
+
+<script type="text/x-jqote-template" id="templateVotesDialogue"><![CDATA[
+<div class="dialogue">
+    <* if (this.votesPositive.length > 0) { *>
+    <h2 class="love"><img src="@Url.Content("~/Content/img/img_trans.gif")"/> @Kululu.Web.Views.Playlist.Playlist.templateVotesDialogue_LoveTheSong </h2>
+    <ul class="votes clearfix">
+        <* $(this.votesPositive).each(function() { *>
+        <li>
+            <a href="https://www.facebook.com/profile.php?id=<*=this.id*>" target="_blank" class="img">
+                <img src="<*=this.photo*>"/>
+            </a>
+        </li>
+        <* }); *>
+    </ul>
+    <* }; *>
+    <* if (this.votesNegative.length > 0) { *>
+    <h2 class="hate"><img src="@Url.Content("~/Content/img/img_trans.gif")"/> @Kululu.Web.Views.Playlist.Playlist.templateVotesDialogue_HateTheSong </h2>
+    <ul class="votes clearfix">
+        <* $(this.votesNegative).each(function(){ *>
+        <li>
+            <a href="https://www.facebook.com/profile.php?id=<*=this.id*>" target="_blank" class="img">
+                <img src="<*=this.photo*>"/>
+            </a>
+        </li>
+        <* }); *>
+    </ul>
+    <* }; *>
+
+    <div class="actions">
+        <a class="ui-btnCancel">@Kululu.Web.Views.Shared.Shared.close</a>
+    </div>
+</div>
+]]></script>
+<script type="text/x-jqote-template" id="DialogueTemplate_EditSong"><![CDATA[
+<div class="editSongDetails dialogue" data-images=<*=JSON.stringify(this.images)*> data-imageindx="1">
+    <h1> @Kululu.Web.Views.Playlist.Playlist.DialogueTemplateEditSong_Title</h1>
+    <div class="media group">
+        <div class="img">
+            <img src="<*=this.thumbnail*>"/>
+            <input type="hidden" name="thumbnail" value="<*=this.thumbnail*>" class="thumbnail"/>
+            <a class="btnChangeImage">@Kululu.Web.Views.Playlist.Playlist.DialogueTemplateEditSong_SwitchPicture</a>
+        </div>
+        <div class="bd">
+            <fieldset>
+                <label>@Kululu.Web.Views.Playlist.Playlist.DialogueTemplateEditSong_ArtistName</label>
+                <div class="inputWrapper">
+                    <input type="text" value="<*=this.artist*>" name="artist" class="artist <*=this.language*>"/>
+                </div>
+            </fieldset>
+            <fieldset>
+                <label>@Kululu.Web.Views.Playlist.Playlist.DialogueTemplateEditSong_SongName</label>
+                <div class="inputWrapper">
+                    <input type="text" value="<*=this.title*>" name="title" class="title <*=this.language*>"/>
+                </div>
+            </fieldset>
+        </div>
+    </div>
+    <div class="actions clearfix">
+        <button class="btnSaveDetails ui-btnSubmit" role="button">@Kululu.Web.Views.Playlist.Playlist.save</button>
+        <a class="btnCancelEditDetails ui-btnCancel" role="button">@Kululu.Web.Views.Playlist.Playlist.cancel</a>
+    </div>
+</div>
+</script>
+<script type="text/x-jqote-template" id="DialogueTemplate_PostError">
+<![CDATA[
+    <div class="dialogue">
+        <p>
+        @Kululu.Web.Views.Playlist.Playlist.DialogueTemplatePostError_duplicateEntry
+        </p>
+        <div class="actions">
+            <a class="ui-btnCancel">@Kululu.Web.Views.Shared.Shared.close</a>
+        </div>
+    </div>
+]]></script>
+<script type="text/x-jqote-template" id="DialogueTemplate_PostClient">
+<![CDATA[
+    <div class="postMessage dialogue">
+        <h1> @Kululu.Web.Views.Playlist.Playlist.DialogueTemplatePost_Title </h1>
+        <div class="media group">
+            <img src="<*=this.img*>"/>
+            <div class="bd group">
+                <div class="link <*=this.language*>">
+                    <a href="javascript:void(0);" title="@Kululu.Web.Views.Playlist.Playlist.DialogueTemplatePost_ClickToEdit"><*=this.link*></a>
+                    <div class="inputWrapper <*=this.language*>">
+                        <input name="title" type="text" value="<*=this.link*>"/>
+                    </div>
+                </div>
+                <div class="caption">
+                    <span="caption"><*=this.caption*></span>
+                </div>
+                <div class="description">
+                    <span title="@Kululu.Web.Views.Playlist.Playlist.DialogueTemplatePost_ClickToEdit" class="description">@Kululu.Web.Views.Playlist.Playlist.DialogueTemplatePost_Description</span>
+                    <div class="inputWrapper">
+                        <textarea name="description">@Kululu.Web.Views.Playlist.Playlist.DialogueTemplatePost_Description</textarea>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="actions">
+            <button class="ui-btnSubmit">@Kululu.Web.Views.Playlist.Playlist.AddSong</button>
+            <a class="ui-btnCancel">@Kululu.Web.Views.Playlist.Playlist.CancelAddSong</a>
+        </div>
+    </div>
+]]></script>
+<script type="text/x-jqote-template" id="DialogueTemplate_Post">
+<![CDATA[
+    <div class="postMessage dialogue">
+        <h1> @Kululu.Web.Views.Playlist.Playlist.DialogueTemplatePost_Title </h1>
+        <p>
+            @Kululu.Web.Views.Playlist.Playlist.DialogueTemplatePost_SubTitle
+        </p>
+        <div class="inputWrapper">
+            <textarea name="msg">@Kululu.Web.Views.Playlist.Playlist.DialogueTemplatePost_Content <*= this.playlistName *>.</textarea>
+        </div>
+        <div class="media group">
+            <img src="<*=this.img*>"/>
+            <div class="bd group">
+                <div class="link <*=this.language*>">
+                    <a href="javascript:void(0);" title="@Kululu.Web.Views.Playlist.Playlist.DialogueTemplatePost_ClickToEdit"><*=this.link*></a>
+                    <div class="inputWrapper <*=this.language*>">
+                        <input name="title" type="text" value="<*=this.link*>"/>
+                    </div>
+                </div>
+                <div class="caption">
+                    <span="caption"><*=this.caption*></span>
+                </div>
+                <div class="description">
+                    <span title="@Kululu.Web.Views.Playlist.Playlist.DialogueTemplatePost_ClickToEdit" class="description">@Kululu.Web.Views.Playlist.Playlist.DialogueTemplatePost_Description</span>
+                    <div class="inputWrapper">
+                        <textarea name="description"></textarea>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="actions">
+            <button class="ui-btnSubmit">@Kululu.Web.Views.Playlist.Playlist.AddSong</button>
+            <a class="ui-btnCancel">@Kululu.Web.Views.Playlist.Playlist.CancelAddSong</a>
+        </div>
+    </div>
+]]></script>
+<script type="text/x-jqote-template" id="DialogueTemplate_DeleteSong">
+<![CDATA[
+    <div class="deleteSong dialogue">
+        <h2>@Kululu.Web.Views.Playlist.Playlist.DialogueTemplateDeleteSong_Title</h2>
+        <div class="notice">@Kululu.Web.Views.Playlist.Playlist.DialogueTemplateDeleteSong_Subtitle</div>
+        <div class="actions">
+            <button class="ui-btnSubmit">@Kululu.Web.Views.Playlist.Playlist.DialogueTemplateDeleteSong_DeleteSong</button>
+            <a class="ui-btnCancel">@Kululu.Web.Views.Shared.Shared.close</a>
+        </div>
+    </div>
+]]></script>

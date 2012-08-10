@@ -1,0 +1,85 @@
+﻿@import "language\direction.less";
+
+#leaderboard 
+{
+    display: none;
+    margin: 30px;
+    background-color: #222222;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;    
+    -webkit-box-shadow: 0px 1px 10px 0px #cccccc;
+    -moz-box-shadow: 0px 1px 10px 0px #cccccc;
+    box-shadow: 0px 1px 10px 0px #cccccc;
+}
+#leaderboard h1 
+{
+    display: block;
+    border-bottom: solid 1px #cccccc;
+    color: White;
+    padding: 10px 0px 0px 0px;
+	.languagePadding(20px);
+	.oppositeLanguagePadding(10px);
+}
+#leaderboard ul 
+{
+    padding: 20px;
+    background-color: #f0f0f0;
+    background: url(../img/bg_stripes03.png);
+}
+#leaderboard ul li 
+{
+    height: 35px;
+    line-height: 35px;
+    border-top: dashed 1px #cccccc;
+    padding: 5px 0;
+}
+#leaderboard ul li:first-child
+{
+    border-top: 0px;
+}
+#leaderboard .rating 
+{
+    font-family: 'Redressed', arial, serif;
+    font-size: 35px;
+    color: #457DD6;
+    display: block;
+    float: @languageFloat;
+	.oppositeLanguageMargin(5px);
+    width: 30px;
+}
+#leaderboard .img 
+{
+    display: block;
+    float: @languageFloat;
+	.oppositeLanguageMargin(10px);
+}
+#leaderboard .img img
+{
+    width: 35px;
+    height: 35px;
+}
+
+#leaderboard .name 
+{
+    display: block;
+    float: @languageFloat;
+    font-size: 20px;
+    font-family: 'Brawler', serif;
+}
+#leaderboard .scoreWrapper
+{
+    display: inline-block;
+    float: @oppositeLanguageFloat;
+}
+#leaderboard .scoreWrapper .score
+{
+    font-family: 'Redressed', arial, serif;
+    font-size: 20px;
+    padding: 5px;    
+    background-color: White;
+    color: #555555;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;    
+}

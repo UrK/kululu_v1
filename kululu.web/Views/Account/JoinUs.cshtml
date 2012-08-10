@@ -1,0 +1,22 @@
+﻿@model string
+@{
+    ViewBag.Title = "Like Us!";
+    Layout = MVC.Shared.Views._LayoutZero;
+}
+
+<h2>@Kululu.Web.App_GlobalResources.Strings.joinUsTitle</h2>
+<p>@Kululu.Web.App_GlobalResources.Strings.joinUsMessage</p>
+<img src = "@Model" />
+
+@section ScriptsEND
+{
+    <script type="text/javascript">
+        var e = document.createElement('script'); e.async = true;
+        e.src = document.location.protocol +
+            '//connect.facebook.net/en_US/all.js';
+        document.getElementById('fb-root').appendChild(e);
+        window.fbAsyncInit = function () {
+            FB.Canvas.setAutoGrow();
+        };
+    </script>
+}

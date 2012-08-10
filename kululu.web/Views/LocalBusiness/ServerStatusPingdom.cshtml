@@ -1,0 +1,11 @@
+﻿@model Kululu.Web.Controllers.LocalBusinessController.ServerStatusModel
+
+@{
+    Layout = null;
+    Response.ContentType = "text/xml";
+}
+
+<pingdom_http_custom_check>
+        <status>@Model.Status</status>
+        <response_time>@Model.ResponseTime</response_time>
+</pingdom_http_custom_check>

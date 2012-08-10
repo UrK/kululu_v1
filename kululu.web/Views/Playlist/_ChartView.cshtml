@@ -1,0 +1,191 @@
+﻿@model Kululu.Web.Models.PlaylistWithUserDTO
+@using Resources = Kululu.Web.Views.Playlist
+
+@*<script type="text/javascript" src="@Url.Content("~/Scripts/bbcode.js")"></script>*@
+<script type="text/javascript">
+    $.extend(Globals, {
+        playlistSettings: {
+            playlistID: @Model.Playlist.Id,
+            playlistName: "@Model.Playlist.Name",
+            nextPlayDate: "@Model.Playlist.NextPlayDateBinary",
+            NumberOfVotes: @Model.Playlist.NumberOfVotes,
+            NumberOfSongs: @Model.Playlist.NumberOfSongs,
+            timeStamp: "@Model.Playlist.TimeStampBinary",
+            NumOfSongsLimit: @Model.Playlist.NumOfSongsLimit,
+            playlistActive: true //is playlist active - before deadline
+        }
+    });
+    $.extend(Globals.User, {
+            numOfVotes: @Model.User.numOfVotes,
+            numOfSongsLeft: @Model.User.numOfSongsLeft
+        }
+    );
+</script>
+
+<div class="playlistName">
+    <h1>@Model.Playlist.Name</h1>
+    @if (!string.IsNullOrEmpty(@Model.Playlist.Description))
+    {
+    <text>
+    <div class="playlistDescription">
+        <p>@Model.Playlist.Description</p>
+    </div>
+    </text>
+    }
+    @if (Model.Playlist.NextPlayDateBinary != -1)
+    {
+    <text>
+        <div class="countdown"></div>
+    </text>
+    }
+</div>
+<div class="toolbar group">
+@*    <a class="ui-btnSumbit">Add Song</a>*@
+    <ul id="filterBar" class="clearfix">
+        <li> <a href="javascript:void(0);" id="Rating"
+            @if (Model.Playlist.NextPlayDateBinary != -1)
+            {<text>class = "selected"</text>}>@Resources.Playlist.leadingSongs</a></li>
+        <li> <a href="javascript:void(0);" id="DateAdded"
+            @if (Model.Playlist.NextPlayDateBinary == -1)
+            {<text>class = "selected"</text>}>@Kululu.Web.Views.Playlist.Playlist.newSongsTab</a></li>
+        <li class="loading"> <img class="loading" src="@Url.Content("~/Content/img/ajax-loader2.gif")" title="@Kululu.Web.App_GlobalResources.Strings.loadingTitle"/></li>
+    </ul>
+    @if (Model.User.role == "User")
+    { //show only for users that are not admin
+        int nNewSongs = Model.Playlist.NumberOfSongs - Model.User.numOfVotes;
+        <a class="newSongs @if (nNewSongs > 0)
+                           {<text>new</text>}" href="javascript:void(0);">
+            <img src="@Url.Content("~/Content/img/img_trans.gif")"/>
+            <span class="number">@nNewSongs</span>
+        </a>
+    }
+</div>
+
+<div class="searchBar group">
+    <div class="inputWrapper clearfix">
+        <div class="search">
+            <img src="@Url.Content("~/Content/img/img_trans.gif")"/>
+        </div>
+        @{
+            string searchDefaultValue;
+            if (Model.Playlist.NumOfSongsLimit == 0 && !Model.User.IsPageAdmin)
+            {
+                searchDefaultValue = @Resources.Playlist.searchDefaultValueLookupSongs;
+            }
+            else
+            {
+                searchDefaultValue = @Resources.Playlist.searchDefaultValueWantToHear;
+            }
+        }
+        <input type="text" id="search" class="defaultInput" autocomplete="off" value="@searchDefaultValue" title="@Resources.Playlist.searchDefaultValueTitle"/>
+        <a href="javascript:void(0);" class="delete" title="מחק">
+            <img src="@Url.Content("~/Content/img/img_trans.gif")"/>
+        </a>
+    </div>
+    <a class="clearInput"></a>
+</div>
+
+<div class="back clearfix">
+    <a href="javascript:void(0);">@Resources.Playlist.backToPlaylist</a>
+    <img class="loading" src="@Url.Content("~/Content/img/ajax-loader2.gif")" title="@Kululu.Web.App_GlobalResources.Strings.loadingTitle"/>
+</div>
+<ul class="playlist current"></ul>
+<ul class="playlist searchResults"></ul>
+<div class="showMore clearfix">
+    <a href="javascript:void(0);">@Resources.Playlist.showMore</a>
+    <img class="loading" src="@Url.Content("~/Content/img/ajax-loader2.gif")" title="@Kululu.Web.App_GlobalResources.Strings.loadingTitle"/>
+</div>
+<ul class="info clearfix">
+    <li>
+        <span class="numOfVotes number">@Model.Playlist.NumberOfVotes</span>
+        <span>@Resources.Playlist.votes </span>
+    </li>    
+    <li>
+        <span class="numOfSongs number">@Model.Playlist.NumberOfSongs</span>
+        <span>@Resources.Playlist.songs</span>
+    </li>
+</ul>
+
+<script type="text/x-jqote-template" id="songLIChartWrapperTemplate"><![CDATA[
+<li class="song group <*=this.type*>" data-id="<*=this.SongId*>" data-postid="<*=this.fbPostId*>" data-fulltitle="<*=this.fulltitle*>" data-duration="<*=this.duration*>" data-language="<*=this.language*>" data-YouTubeId="<*=this.YouTubeID*>">
+    <input type="hidden" class="Votes" value="<*=this.Votes*>"/>
+    <input type="hidden" class="PositiveVotes" value="<*=this.PositiveVotes*>"/>
+    <input type="hidden" class="NegativeVotes" value="<*=this.NegativeVotes*>"/>
+
+    <div class="media">
+        <img class="thumbnail" src= "<*=this.thumbnail*>"/>
+        <span class="rating"></span>
+    </div>
+    <div class="bd group">
+        <div class="wrapper group">
+            <div class="songName <*=this.language*> clearfix">
+                <a href="javascript:void(0);" class="title" title="@Resources.Playlist.play"><*=this.title*></a>
+                <span class="hyphen">-</span>
+                <span class="artist"><*=this.artist*></span>
+            </div>
+            <div class="actions clearfix">
+                <span class="votesButtons clearfix">
+                    <button class="userVote hate <* if (this.type == "SearchResultRemote") { *>disabled<*};*>
+                    <* switch (this.UserRating) { 
+                        case -1: *>selected" title="@Resources.Playlist.didYouNotLike"<* break;
+                        default: *>" <* if (this.type != "SearchResultRemote") {*>title="@Resources.Playlist.doYouNotLlike" <*}; break;}*>>
+                        <img src="@Url.Content("~/Content/img/img_trans.gif")"/>
+                    </button>
+                    <button class="userVote love <* if (this.type == "SearchResultRemote") { *>add<*};*>
+                        <* switch (this.UserRating) { 
+                        case 1: *>selected" title="@Resources.Playlist.liked"<* break;
+                        default: *>" title="@Resources.Playlist.likes"<*break;}*>>
+                        <img src="@Url.Content("~/Content/img/img_trans.gif")"/>
+                        <span>@Resources.Playlist.iLiked</span>
+                    </button>
+                </span>
+                <a class="player play">
+                    <img src="@Url.Content("~/Content/img/ajax-loader.gif")"/>
+                </a>
+            </div>
+        </div>
+        <* if (this.type != "SearchResultRemote") { *>
+        <div class="footer group">
+            <a class="creator" href="https://www.facebook.com/profile.php?id=<*=this.CreatorId*>" target="_blank"><*=this.Creator*></a>
+            <abbr class="timeago"><*=this.Timeago*></abbr>
+            <* if (this.fbPageId.length>0) {*>
+            <a class="comments" href="https://www.facebook.com/<*= this.fbPageId*>/posts/<*= this.fbPostId *>" title="@Resources.Playlist.clickToViewPostInFB" target="_blank">
+                <img src="@Url.Content("~/Content/img/img_trans.gif")"/>
+                <span><*= this.numOfComments *></span>
+            </a>
+            <* }; *>
+            <* if (this.showOptions) { *>
+                <div class="options">
+                    <a class="btnOptions" href="javascript:void(0);">
+                        <img src="@Url.Content("~/Content/img/img_trans.gif")"/>
+                    </a>
+                </div>
+            <* }; *>
+            <div class="votes">
+                <a href="javascript:void(0);" class="btnVotes clearfix <* if (this.Votes==0) { *>disabled" title="" <* }
+                    else { *>" 
+                    title="@Resources.Playlist.showVotes"
+                    <*};*> ><*=this.Votes*> 
+                    @Resources.Playlist.votes
+                    </a>
+            </div>
+
+        </div>
+        <* }; *>
+    </div>
+</li>
+]]></script>
+<script type="text/x-jqote-template" id="songLIChartOptionsTemplate">
+<![CDATA[
+<ul>
+    <li class="editSong">
+        <a href="javascript:void(0);" class="btnEdit" title=@Resources.Playlist.editTitle> 
+        @Resources.Playlist.edit
+        </a>
+    </li>
+    <li class="deleteSong">
+        <a href="javascript:void(0);" class="btnDelete">@Resources.Playlist.deleteSong</a>
+    </li>
+</ul>
+]]>
+</script>

@@ -1,0 +1,41 @@
+﻿@model Kululu.Web.Models.SongWithUserRatingDTO
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>@Model.Item1.SongName</title>
+
+	@*<!-- Open Graph tags -->
+    <meta property="og:title" content="Circular scrubbing video player" />
+    <meta property="og:description" content="A video player interface experiment, which features circular scrubbing and a very minimal design." />
+    <meta property="og:type" content="video" />
+    <meta property="og:url" content="http://ahrengot.com/playground/circular-scrubbing"/>
+    <meta property="og:image" content="http://ahrengot.com/playground/circular-scrubbing/thumb.jpg"/>
+    <meta property="og:site_name" content="Ahrengot's Playground"/>
+    <meta property="fb:admins" content="100000936142315"/>
+     
+    <!-- Video player specific OG tags -->
+    <meta property="og:video" content="http://ahrengot.com/playground/circular-scrubbing/video-player.swf?url=http://ahrengot.com/playground/circular-scrubbing/assets/video/example.mp4" />
+    <meta property="og:video:width" content="374" />
+    <meta property="og:video:height" content="202" />
+    <meta property="og:video:type" content="application/x-shockwave-flash" />*@
+
+    <meta property="fb:app_id" content="@((System.Configuration.ConfigurationManager.GetSection("facebookSettings") as Facebook.FacebookConfigurationSection).AppId)"/>
+    <meta property="og:title" content="@Model.SongName"/>
+    <meta property="og:type" content="Song"/>
+    <meta property="og:type" content="Article"/>
+    <meta property="og:site" content="http://www.kulu.lu/" />
+    <meta property="og:image" content="@Model.SongImageUrl"/>
+    <meta property="og:site_name" content="Kululu"/>
+   
+</head>
+<body>
+    <div>
+        
+    </div>
+</body>
+</html>

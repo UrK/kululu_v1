@@ -1,0 +1,28 @@
+﻿@using Kululu.Web
+@using Resources = Kululu.Web.App_GlobalResources
+<div id="footer" class="clearfix">
+    <span class="legalNotice" >@Resources.Strings.allRightsReserved</span>
+    <a class="web" href="https://www.kulu.lu" target="_blank">kulu.lu</a>
+
+    @{
+        var returnUrl = Request.RawUrl;
+        if (!returnUrl.Contains("signed_request="))
+        {
+            returnUrl = string.Format("{0}?signed_request={1}", Request.RawUrl, Request["signed_request"]);
+        }
+    }
+
+  
+    @foreach (var cu in Enum.GetNames(typeof(MvcApplication.Culture)))
+    {
+        @Html.ActionLink(
+            cu,
+            "ChangeCulture",
+            "Account",
+            new { lang = cu, returnUrl },
+            new { @class = "web" })
+        <span class='web'> | </span>
+    }
+    <span class="version">@Resources.Strings.footerVesion</span>
+    <a class="tos" href="@Url.Content("~/LocalBusiness/TOS")">@Resources.Strings.termsOfService</a>
+</div>

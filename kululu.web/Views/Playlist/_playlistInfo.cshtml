@@ -1,0 +1,14 @@
+﻿@model Kululu.Web.Models.PlaylistDTO
+@using Resources = Kululu.Web.Views.Playlist
+           
+<ul class="info clearfix">
+    <input type="hidden" id="hfMaxVotes" value="@Model.MaxVotes" />
+    <li>
+        <span class="numOfVotes number">@Model.NumberOfVotes</span>
+        <span>@Resources.Playlist.votes</span>
+    </li>    
+    <li>
+        <span class="numOfSongs number">@Model.NumberOfSongs</span>
+        <span>@Resources.Playlist.songs</span>
+    </li>
+</ul>

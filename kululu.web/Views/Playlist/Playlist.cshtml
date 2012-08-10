@@ -1,0 +1,101 @@
+﻿@using Resources = Kululu.Web.Views.Playlist
+@model Kululu.Web.Models.PageInfoDTO
+@{
+    ViewBag.Title = "Kululu";
+    Layout = MVC.Shared.Views._LayoutMain;
+}
+@section CSS
+{
+    @if (HttpContext.Current.IsDebuggingEnabled)
+    {
+        <link href="@Url.Content("~/Content/css/language/" + PageData["dirStr"] + ".css")" rel="stylesheet" type="text/css" />
+               
+        <link href="@Url.Content("~/Content/css/blockmessage.css")" rel="stylesheet" type="text/css" />
+        <link href="@Url.Content("~/Content/css/dialogs_" + PageData["dirStr"] + ".css")" rel="stylesheet" type="text/css" />
+        <link href="@Url.Content("~/Content/css/guiders-1.1.2_" + PageData["dirStr"] + ".css")" rel="stylesheet" type="text/css" />
+        <link href="@Url.Content("~/Content/css/player.css")" rel="stylesheet" type="text/css" />
+        <link href="@Url.Content("~/Content/css/timeline.css")" rel="stylesheet" type="text/css" />
+        <link href="@Url.Content("~/Content/css/wall_" + PageData["dirStr"] + ".css")" rel="stylesheet" type="text/css" />
+        <link href="@Url.Content("~/Content/css/leaderboard_" + PageData["dirStr"] + ".css")" rel="stylesheet" type="text/css" />
+        <link href="@Url.Content("~/Content/css/chart_" + PageData["dirStr"] + ".css")" rel="stylesheet" type="text/css" />
+        <link href="@Url.Content("~/Content/css/playlist_" + PageData["dirStr"] + ".css")" rel="stylesheet" type="text/css" />
+    }
+    else
+    {
+        <link href="@Url.Content("~/Content/css/allmin_" + PageData["dirStr"] + ".css")" rel="stylesheet" type="text/css" />
+    }
+    
+    <link href="https://fonts.googleapis.com/css?family=Redressed&v1" rel='stylesheet' type='text/css'/>
+    <link href='https://fonts.googleapis.com/css?family=Brawler' rel='stylesheet' type='text/css' />
+}
+@section Scripts
+{
+@*    <script src="@Url.Content("~/Scripts/less-1.1.4.min.js")" type="text/javascript"></script>*@
+    @Html.Partial(MVC.Shared.Views._Globals, @Model)
+}
+@section ScriptsEND
+{
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.min.js" type="text/javascript"></script>
+    <script src="@Url.Content("https://ajax.googleapis.com/ajax/libs/swfobject/2.2/swfobject.js")" type="text/javascript"></script>
+    @if (HttpContext.Current.IsDebuggingEnabled)
+    {
+        <script src="@Url.Content("~/Scripts/jquery.jqote2.js")" type="text/javascript"></script>
+        <script src="@Url.Content("~/Scripts/blockmessage.js")" type="text/javascript"></script>
+        <script src="@Url.Content("~/Scripts/flashmessage.js")" type="text/javascript"></script>
+        <script src="@Url.Content("~/Scripts/guiders-1.1.2.js")" type="text/javascript"></script>
+        <script src="@Url.Content("~/Scripts/jquery.tipsy.js")" type="text/javascript"></script>
+        <script src="@Url.Content("~/Scripts/core.js")" type="text/javascript"></script>
+        <script src="@Url.Content("~/Scripts/facebook.js")" type="text/javascript"></script>
+        <script src="@Url.Content("~/Scripts/ajax.js")" type="text/javascript"></script>
+        <script src="@Url.Content("~/Scripts/jquery.timeline.js")" type="text/javascript"></script>
+        <script src="@Url.Content("~/Scripts/player.js")" type="text/javascript"></script>
+        <script src="@Url.Content("~/Scripts/wall.js")" type="text/javascript"></script>
+        <script src="@Url.Content("~/Scripts/chart.js")" type="text/javascript"></script>
+        <script src="@Url.Content("~/Scripts/chartAux.js")" type="text/javascript"></script>
+        <script src="@Url.Content("~/Scripts/kululu.js")" type="text/javascript"></script>
+    }
+    else
+    {
+        <script src="@Url.Content("~/Scripts/allmin.js")" type="text/javascript"></script>
+    }
+    <script src="@Url.Content("~/Scripts/main.js")" type="text/javascript"></script>
+
+}
+
+@Html.Partial(MVC.Playlist.Views._Header, @Model)
+<div>
+    @Html.Partial(MVC.Playlist.Views._Nav, @Model)
+            <div id="feedback">
+    <a class="feedback" href="javascript:void(0);">@Resources.Playlist.leaveFeedback</a>
+</div>
+    <div id="flash" class="clearfix"></div>
+    <div class="content clearfix"></div>
+</div>
+
+<fb:comments num_posts="15" width="520" href="@GetAbsoluteUrl()" numposts="100"></fb:comments>
+
+@*jqote templates*@
+@Html.Partial(MVC.Playlist.Views._DialoguesTemplates)
+
+@functions { 
+    string GetAbsoluteUrl()
+    {
+        string url;
+        if (Request.Url.AbsoluteUri.Contains("localhost"))
+        {
+            url = "http://socialbiz.dyndns-server.com/kululu/LocalBusiness/GetInfo";
+        }
+        else
+        {
+            url = Url.Content("~/LocalBusiness/GetInfo");
+            var authority = Request.Url.GetLeftPart(UriPartial.Authority);
+            url = string.Format("{0}{1}", authority, url).ToLower();
+            if (!url.Contains("https"))
+            {
+                url = url.Replace("http", "https"); //making sure url is always secure
+            }
+        }
+
+        return string.Format("{0}/{1}", url, @Model.Id);
+    }    
+}

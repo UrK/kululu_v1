@@ -1,0 +1,94 @@
+﻿@using Resources = Kululu.Web.App_GlobalResources
+@model Kululu.Web.Models.PlaylistWithUserDTO
+@{ 
+    object disabledAttributes =new { };
+    if (Model.Playlist.Id==0)
+    {
+        disabledAttributes = new { @disabled = "disabled" };
+    }
+}
+
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true)
+    @Html.HiddenFor(model => model.Playlist.Id)
+    @Html.HiddenFor(model => model.Playlist.LocalBusinessId)
+    @Html.HiddenFor(model => model.Playlist.FanPageId)
+    @Html.HiddenFor(model => model.Playlist.IsDefaultPlaylist)
+
+    <div class="editor-label">
+        @Html.LabelFor(model => model.Playlist.Name, @Resources.Settings.playlistName)
+    </div>
+    <div class="editor-field inputWrapper">
+        @Html.EditorFor(model => model.Playlist.Name)
+    </div>
+    <div class="editor-validation">
+        @Html.ValidationMessageFor(model => model.Playlist.Name)
+    </div>
+
+    <div class="editor-label">
+        @Html.LabelFor(model => model.Playlist.Description, @Resources.Settings.description)
+    </div>
+    <div class="editor-field inputWrapper">
+        @Html.TextAreaFor(model => model.Playlist.Description)
+    </div>
+    <div class="editor-validation">
+        @Html.ValidationMessageFor(model => model.Playlist.Description)
+    </div>
+
+     <div>
+       @Html.Label(@Resources.Settings.includeEndDate)
+       @Html.CheckBox("includeMarchDates", Model.Playlist.IncludeMarchDates)
+     </div>
+     
+    <div id="dates" >
+         <div class="editor-label">
+             @Html.LabelFor(model => model.Playlist.NextPlayDate, @Resources.Settings.endOfVoting)
+         </div>
+         <div class="editor-field inputWrapper">
+             @Html.TextBoxFor(model => model.Playlist.NextPlayDate, new { @class = "datePicker", @readonly = "readonly" })
+         </div>
+         <div class="editor-validation">
+             @Html.ValidationMessageFor(model => model.Playlist.NextPlayDate)
+         </div>
+    </div>
+    <div id="songLimit">
+        <div class="editor-label">
+            @Html.Label(@Resources.Settings.songLimitTitle) <a href="javascript:void(0);" class="tooltip"
+            title="@Resources.Settings.maxSongsTitle">(?)</a>
+        </div>
+        <div class="editor-field selectWrapper">
+                @Html.DropDownListFor(model => model.Playlist.NumOfSongsLimit,
+                    new List<SelectListItem>() {  
+                        new SelectListItem(){ Text = "0", Value = "0"},
+                        new SelectListItem(){ Text = "5", Value= "5"},
+                        new SelectListItem(){ Text = "10", Value = "10"}
+                    }
+                )
+        </div>
+        <div class="editor-field selectWrapper">
+            @Html.DropDownListFor(model => model.Playlist.IsSongsLimitDaily,
+                    new List<SelectListItem>() { 
+                        new SelectListItem(){ Text = @Resources.Settings.dailySongLimit, Value = "true"},
+                        new SelectListItem(){ Text = @Resources.Settings.songLimit , Value = "false"}
+                    })
+        </div>
+
+    </div>
+    
+    <div id="datesCheckbox">
+        @Html.CheckBoxFor(model => model.Playlist.IsActive, disabledAttributes)
+        <label for="IsActive">@Resources.Strings.active</label>
+        <div class="editor-validation">
+            @Html.ValidationMessageFor(model => model.Playlist.IsActive)
+        </div>
+    </div>
+    
+    <div class="actions">
+        <input type="submit" class="ui-btnSubmit" value="@Resources.Strings.save" />
+        @if (Model.Playlist.LocalBusinessId > 0)
+        {
+            <a href="@Url.Content("~/LocalBusiness/Settings?id=")@Model.Playlist.LocalBusinessId" class="ui-btnCancel">@Resources.Strings.cancel</a>
+        }
+    </div>
+}

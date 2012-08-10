@@ -1,0 +1,25 @@
+﻿@model Kululu.Web.Models.LocalBusinessDTO
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>@Model.Name</title>
+    <meta property="fb:app_id" content="@((System.Configuration.ConfigurationManager.GetSection("facebookSettings") as Facebook.FacebookConfigurationSection).AppId)"/>
+    <meta property="og:title" content="@Model.Name"/>
+    <meta property="og:type" content="Playlist"/>
+    <meta property="og:site" content="@Model.FacebookUrl " />
+    <meta property="og:image" content="@Model.ImageUrl"/>
+    <meta property="og:site_name" content="Kululu"/>
+    <meta property="og:description"
+          content="אני בוחר עכשיו איזה מוסיקה תשמע ב-@Model.Name!"/>
+</head>
+<body>
+    <div>
+        
+    </div>
+</body>
+</html>

@@ -1,0 +1,39 @@
+﻿#player 
+{
+    height: 0px;
+    overflow: hidden;
+}
+#playerScreen
+{
+    position: relative;
+    background-color: Black;
+    width: 100%;
+    overflow: hidden;
+}
+.playerA
+{
+    height: 224px;
+}
+.playerA.cut 
+{
+    height: 202px;
+}
+.playerB
+{
+    height: 448px;
+    margin-top: -224px;
+}
+.playerB.cut
+{
+    height: 426px;
+}
+#playerAwrapper, #playerBwrapper
+{
+    width: 100%;
+    height: 224px;
+}
+#ytapiplayerA, #ytapiplayerB /* FLASH */
+{
+}
+/**************************************************/
+/**************************************************/

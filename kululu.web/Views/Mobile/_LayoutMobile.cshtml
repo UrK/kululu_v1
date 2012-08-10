@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>@ViewBag.Title</title>
+    <script src="https://www.google.com/jsapi?key=ABQIAAAAsCUf9OZpIO28nWjKRYEpYhRjzMWj8rnSX4XYV-gLvpS79WnxsRQKrx7Fu1Tqsa4XkapjcuWEgnt0BQ" type="text/javascript"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.js" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/Facebook.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/ajax.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/observer.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/StringFormat.js")" type="text/javascript"></script>
+    <script type="text/javascript" src="https://code.jquery.com/mobile/1.0b1/jquery.mobile-1.0b1.min.js"></script>
+    @RenderSection("Scripts")
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/css/reset.css")"/>
+    <link rel="stylesheet" href="https://code.jquery.com/mobile/1.0b1/jquery.mobile-1.0b1.min.css" />
+    <link href="@Url.Content("~/Content/css/mobile/kululuMobile.css")" rel="stylesheet" type="text/css" />
+    @RenderSection("Css")
+</head> 
+
+<body>
+    <input id="hfCurrentPlaylistId" value="@ViewBag.CurrentPlaylistId"  type="hidden"/>
+
+    <div id="main" class="FBContainer clearfix" data-role="page">
+        @RenderBody()
+    </div>
+
+    <div id="fb-root"></div>
+    <script src="https://connect.facebook.net/he_IL/all.js" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/Mobile/kululuMobile.js")" type="text/javascript"></script>
+    @RenderSection("ScriptsEND", false)
+</body>
+</html> 
